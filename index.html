@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshay Madhavan - Growth Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FFF8F0;
+  --surface: #FFFFFF;
+  --ink: #1A1208;
+  --ink2: #3D2B10;
+  --muted: #8A7360;
+  --orange: #F4622A;
+  --orange-dim: rgba(244,98,42,0.10);
+  --orange-glow: rgba(244,98,42,0.30);
+  --amber: #F9A825;
+  --amber-dim: rgba(249,168,37,0.15);
+  --border: rgba(26,18,8,0.10);
+  --border-strong: rgba(26,18,8,0.18);
+  --page-pad: 56px;
+  --section-v: 96px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(249,168,37,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 80% at 90% 100%, rgba(244,98,42,0.12) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--page-pad);
+  background: rgba(255,248,240,0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--orange); }
+.nav-cta {
+  padding: 10px 24px !important;
+  background: var(--orange) !important;
+  color: #fff !important;
+  border-radius: 100px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover { background: #D94E1E !important; transform: translateY(-1px); box-shadow: 0 6px 20px var(--orange-glow) !important; }
+
+/* ─── HERO ────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  grid-template-rows: 1fr auto;
+  column-gap: 48px;
+  align-items: center;
+  padding: 120px var(--page-pad) 80px;
+  position: relative;
+  z-index: 1;
+}
+.hero-main {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero-stats-bar {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(26,18,8,0.08);
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.hero-scroll-row {
+  grid-column: 1;
+  grid-row: 2;
+  padding-bottom: 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(244,98,42,0.25);
+  border-radius: 100px;
+  padding: 8px 18px;
+  margin-bottom: 40px;
+  width: fit-content;
+  animation: fadeUp 0.7s ease both;
+}
+.eyebrow-dot {
+  width: 7px; height: 7px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--orange-glow); }
+  50%       { box-shadow: 0 0 0 7px transparent; }
+}
+.eyebrow-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+}
+
+.hero-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.8rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-headline .line2 {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(26,18,8,0.18);
+  display: block;
+}
+.hero-headline .accent { color: var(--orange); }
+
+.hero-sub {
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 500px;
+  line-height: 1.75;
+  margin: 28px 0 44px;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+/* ─── HERO STAT BAR ──────────────────────────────── */
+.hstat {
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  transition: background 0.3s;
+}
+.hstat:last-child { border-bottom: none; }
+.hstat:hover { background: var(--orange-dim); }
+.hstat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.hstat-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ─── SCROLL HINT ────────────────────────────────── */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  animation: fadeUp 1s 0.8s ease both;
+  padding-top: 40px;
+}
+.scroll-line {
+  width: 40px; height: 1px;
+  background: var(--border-strong);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  left: -100%; top: 0;
+  width: 100%; height: 100%;
+  background: var(--orange);
+  animation: scanline 2s infinite;
+}
+@keyframes scanline { to { left: 100%; } }
+
+/* ─── BUTTONS ────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 32px;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #D94E1E; transform: translateY(-2px); box-shadow: 0 12px 36px var(--orange-glow); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 1.5px solid var(--border-strong);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.25s;
+  background: transparent;
+  white-space: nowrap;
+}
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-dim); }
+
+/* ─── MARQUEE ────────────────────────────────────── */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 13px 0;
+  background: var(--surface);
+  position: relative;
+  z-index: 1;
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.marquee-dot { color: var(--orange); font-size: 0.5rem; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── SHARED SECTION ─────────────────────────────── */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-v) var(--page-pad);
+  border-top: 1px solid var(--border);
+}
+.impact-section {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-v) var(--page-pad);
+  border-top: 1px solid var(--border);
+}
+.sec-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 56px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.sec-title span { color: var(--orange); }
+
+/* section-label line */
+.impact-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.impact-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── IMPACT GRID ────────────────────────────────── */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.impact-card {
+  padding: 40px 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(26,18,8,0.04);
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+  box-shadow: 0 20px 50px rgba(244,98,42,0.12);
+}
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--amber));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.impact-card:hover::before { transform: scaleX(1); }
+.impact-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.impact-desc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.impact-company {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--orange);
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  background: var(--orange-dim);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* ─── APPROACH / PHILOSOPHY ──────────────────────── */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.approach-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(26,18,8,0.04);
+}
+.approach-card:hover { transform: translateY(-4px); border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
+.approach-icon { font-size: 2.2rem; margin-bottom: 20px; display: block; }
+.approach-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.approach-body { font-size: 0.82rem; line-height: 1.75; color: var(--muted); }
+.approach-num {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  font-family: 'Syne', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(244,98,42,0.06);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+/* ─── EXPERIENCE ─────────────────────────────────── */
+.exp-timeline { display: flex; flex-direction: column; }
+.exp-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+  gap: 0;
+  position: relative;
+  transition: background 0.2s, padding 0.2s, border-radius 0.2s;
+}
+.exp-row:last-child { border-bottom: 1px solid var(--border); }
+.exp-row:hover {
+  background: var(--orange-dim);
+  border-top-color: transparent;
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.exp-row:last-child:hover { border-bottom-color: transparent; }
+
+.exp-left { padding-right: 40px; padding-top: 4px; }
+.exp-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.exp-co {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.exp-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--amber-dim);
+  border: 1px solid rgba(249,168,37,0.35);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: #B45309;
+  letter-spacing: 0.06em;
+  border-radius: 100px;
+  margin-top: 12px;
+}
+.exp-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.exp-bullets li {
+  display: flex;
+  gap: 14px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink2);
+}
+.exp-bullets li::before {
+  content: '▸';
+  color: var(--orange);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.exp-kpi-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.exp-kpi {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--orange);
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(26,18,8,0.04);
+}
+.exp-kpi-num { font-size: 0.92rem; font-weight: 500; }
+
+/* ─── SKILLS ─────────────────────────────────────── */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.skill-group-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.skill-bars { display: flex; flex-direction: column; gap: 14px; }
+.skill-bar-row { display: flex; align-items: center; gap: 14px; }
+.skill-bar-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+.skill-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--orange), var(--amber));
+  width: 0;
+  border-radius: 100px;
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+.skill-bar-fill.animate { width: var(--w); }
+.skill-bar-pct {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* ─── TOOLS ──────────────────────────────────────── */
+.tools-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; }
+.tool-chip {
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+  cursor: default;
+  background: var(--surface);
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(26,18,8,0.04);
+}
+.tool-chip:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-dim); transform: translateY(-2px); }
+
+/* ─── EDUCATION ──────────────────────────────────── */
+.edu-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.edu-card {
+  padding: 44px 40px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(26,18,8,0.04);
+}
+.edu-card:hover { transform: translateY(-3px); border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
+.edu-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--amber));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.edu-card:hover::after { transform: scaleX(1); }
+.edu-degree {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.edu-school {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 18px;
+}
+.edu-meta { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); line-height: 1.75; }
+
+/* ─── ACHIEVEMENTS ───────────────────────────────── */
+.ach-list { display: flex; flex-direction: column; }
+.ach-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  transition: padding-left 0.2s;
+}
+.ach-item:last-child { border-bottom: 1px solid var(--border); }
+.ach-item:hover { padding-left: 12px; }
+.ach-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.ach-body { flex: 1; }
+.ach-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.45; }
+.ach-year { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--orange); opacity: 0.75; }
+
+/* ─── CTA SECTION ────────────────────────────────── */
+.cta-section {
+  position: relative;
+  z-index: 1;
+  padding: 120px var(--page-pad);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--surface);
+}
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 70% at 50% 50%, rgba(249,168,37,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(244,98,42,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: inline-block;
+  background: var(--orange-dim);
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(244,98,42,0.2);
+}
+.cta-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.cta-heading span { color: var(--orange); }
+.cta-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 460px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+.cta-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cta-contact-info {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 52px;
+  flex-wrap: wrap;
+}
+.cta-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.cta-info-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.cta-info-val { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.cta-info-val a { color: inherit; text-decoration: none; }
+.cta-info-val a:hover { color: var(--orange); }
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  padding: 32px var(--page-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.footer-logo { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.01em; color: rgba(255,255,255,0.5); }
+.footer-logo span { color: var(--orange); }
+.footer-copy { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
+
+/* ─── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── TABLET 960–1200px ───────────────────────────── */
+@media (max-width: 1200px) {
+  :root { --page-pad: 40px; }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { grid-template-columns: 1fr 200px; column-gap: 32px; }
+}
+
+/* ─── MOBILE ≤768px ──────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --page-pad: 20px; --section-v: 60px; }
+
+  /* Nav */
+  nav { padding: 14px var(--page-pad); }
+  .nav-links { display: none; }
+
+  /* Hero-single column, no stats bar */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px var(--page-pad) 60px;
+    min-height: auto;
+  }
+  .hero-main { width: 100%; }
+  .hero-stats-bar { display: none; }
+  .hero-scroll-row { padding-top: 32px; }
+  .hero-headline { font-size: clamp(3rem, 14vw, 5rem); }
+  .hero-eyebrow { margin-bottom: 28px; }
+  .hero-sub { margin: 20px 0 32px; font-size: 0.95rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
+  .btn-primary, .btn-ghost { text-align: center; justify-content: center; }
+
+  /* Impact */
+  .impact-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .impact-num { font-size: 2.8rem; }
+
+  /* Approach */
+  .approach-grid { grid-template-columns: 1fr; }
+
+  /* Experience */
+  .exp-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+  .exp-row:hover {
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 12px;
+  }
+  .exp-left { padding-right: 0; padding-bottom: 4px; }
+  .exp-title { font-size: 1.5rem; }
+
+  /* Skills */
+  .skills-layout { grid-template-columns: 1fr; gap: 36px; }
+  .skill-bar-name { min-width: 130px; font-size: 0.78rem; }
+
+  /* Education */
+  .edu-row { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-section { padding: 80px var(--page-pad); }
+  .cta-contact-info { flex-direction: column; align-items: center; gap: 24px; }
+
+  /* Footer */
+  footer { padding: 24px var(--page-pad); flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ─── VERY SMALL ≤480px ──────────────────────────── */
+@media (max-width: 480px) {
+  .impact-grid { grid-template-columns: 1fr; }
+  .exp-kpi-row { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">AKSHAY<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">// Open to Growth Manager Roles · Bengaluru &amp; Remote</span>
+    </div>
+
+    <h1 class="hero-headline">
+      I SCALE<br>
+      <span class="line2">GROWTH</span><br>
+      <span class="accent">ENGINES.</span>
+    </h1>
+
+    <p class="hero-sub">
+      <strong>Akshay Madhavan</strong>-Growth Analytics Leader with 5+ years turning data into
+      revenue. From <strong>₹50L monthly budgets</strong> to <strong>6500% ROAS</strong>,
+      I build systems that compound.
+    </p>
+
+    <div class="hero-actions">
+      <a href="mailto:makshay96@gmail.com" class="btn-primary">Let's Talk Growth →</a>
+      <a href="https://linkedin.com/in/akshay-madhavan-576b67166" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-stats-bar">
+    <div class="hstat">
+      <div class="hstat-val">6500%</div>
+      <div class="hstat-label">Peak<br>ROAS</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">170%</div>
+      <div class="hstat-label">YoY Revenue<br>Growth</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">350%</div>
+      <div class="hstat-label">Revenue Growth<br>USDC</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">500%</div>
+      <div class="hstat-label">Online Channel<br>Growth</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">5+</div>
+      <div class="hstat-label">Years of<br>Experience</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-row scroll-hint">
+    <div class="scroll-line"></div>
+    SCROLL TO EXPLORE
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">Growth Analytics <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Paid Media Strategy <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Marketing Automation <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">ROAS Optimization <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Data-Driven Decisions <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Revenue Scaling <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">A/B Testing <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Full-Funnel Growth <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Growth Analytics <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Paid Media Strategy <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Marketing Automation <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">ROAS Optimization <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Data-Driven Decisions <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Revenue Scaling <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">A/B Testing <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">Full-Funnel Growth <span class="marquee-dot">✦</span></div>
+  </div>
+</div>
+
+<!-- IMPACT NUMBERS -->
+<div class="impact-section" id="impact">
+  <div class="impact-label reveal">Key Growth Metrics</div>
+  <div class="impact-grid reveal">
+    <div class="impact-card">
+      <div class="impact-num">6500%</div>
+      <div class="impact-desc">ROAS scaled from 1400%-paid media overhaul across all channels</div>
+      <span class="impact-company">MPOWER Financing</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">170%</div>
+      <div class="impact-desc">Year-over-year revenue growth driven by weekly analytics insights</div>
+      <span class="impact-company">MPOWER Financing</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">350%</div>
+      <div class="impact-desc">Revenue growth achieved while cutting Cost Per Sale by 30%</div>
+      <span class="impact-company">USDC Global</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">500%</div>
+      <div class="impact-desc">Online channel growth with 175% ROI and 40% cost reduction</div>
+      <span class="impact-company">ICICI Prudential Life Insurance</span>
+    </div>
+  </div>
+</div>
+
+<!-- GROWTH APPROACH -->
+<section class="section">
+  <div class="sec-label reveal">How I Operate</div>
+  <h2 class="sec-title reveal">Growth <span>Philosophy</span></h2>
+  <div class="approach-grid reveal">
+    <div class="approach-card">
+      <span class="approach-icon">📊</span>
+      <div class="approach-title">Data First, Always</div>
+      <div class="approach-body">Every growth decision is anchored in data. I build dashboards, automate reporting, and establish KPI frameworks so teams act on signals and not just gut feel.</div>
+      <div class="approach-num">01</div>
+    </div>
+    <div class="approach-card">
+      <span class="approach-icon">⚡</span>
+      <div class="approach-title">Full-Funnel Ownership</div>
+      <div class="approach-body">I own the entire growth loop from paid acquisition and landing page CRO to lead nurturing automation. I don't hand off, I close loops.</div>
+      <div class="approach-num">02</div>
+    </div>
+    <div class="approach-card">
+      <span class="approach-icon">🔁</span>
+      <div class="approach-title">Compound &amp; Automate</div>
+      <div class="approach-body">Manual work doesn't scale. I build automated systems-reporting, workflows and tagging that free teams to focus on strategy, not execution.</div>
+      <div class="approach-num">03</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="sec-label reveal">Career Timeline</div>
+  <h2 class="sec-title reveal">Work <span>Experience</span></h2>
+  <div class="exp-timeline">
+
+    <div class="exp-row reveal">
+      <div class="exp-left">
+        <div class="exp-period">May 2024-Present<br>Bengaluru</div>
+        <div class="exp-co">MPOWER Financing</div>
+        <div class="exp-badge">▲ Promoted Nov 2025</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Senior Analyst-Growth Analytics</div>
+        <ul class="exp-bullets">
+          <li>Owned end-to-end analytics for the digital marketing team, delivering weekly insights that drove 170% YoY revenue growth.</li>
+          <li>Spearheaded paid media strategy across all channels, growing spend efficiency and scaling ROAS from 1400% → 6500%.</li>
+          <li>Collaborated with C-suite to define growth KPIs and strategy, driving a 3× improvement in overall marketing efficiency.</li>
+          <li>Executed website A/B testing programs that improved traffic-to-lead conversion by 20%.</li>
+          <li>Built Tableau and Looker Studio dashboards that cut data analysis time by 70%.</li>
+          <li>Improved site tagging coverage from 70% to 95%, unlocking richer campaign optimization signals.</li>
+          <li>Automated paid media reporting-saving 100+ hours per month for strategic work.</li>
+        </ul>
+        <div class="exp-kpi-row">
+          <div class="exp-kpi"><span class="exp-kpi-num">6500%</span> ROAS</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">170%</span> YoY Revenue</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">100hrs</span> Saved/Month</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div class="exp-left">
+        <div class="exp-period">Apr 2023-Apr 2024<br>Bengaluru</div>
+        <div class="exp-co">USDC Global</div>
+        <div class="exp-badge">★ Best Performer Q1 &amp; Q2</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Performance Marketing Manager</div>
+        <ul class="exp-bullets">
+          <li>Delivered 350% YoY revenue growth while simultaneously reducing Cost Per Sale by 30%.</li>
+          <li>Managed ₹50L/month advertising budget with 200% ROAS-consistently met aggressive revenue targets.</li>
+          <li>Automated daily performance reports and built a budget consolidation dashboard, cutting reporting effort by 50%.</li>
+          <li>Designed multi-channel marketing automation workflows across email, SMS, and WhatsApp for lead nurturing at scale.</li>
+        </ul>
+        <div class="exp-kpi-row">
+          <div class="exp-kpi"><span class="exp-kpi-num">350%</span> Revenue Growth</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">₹50L</span> Budget Managed</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">-30%</span> Cost Per Sale</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div class="exp-left">
+        <div class="exp-period">Aug 2020-Jan 2023<br>Mumbai</div>
+        <div class="exp-co">ICICI Prudential Life</div>
+        <div class="exp-badge">★ Top 5% · 3× Impact Award</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Digital Product Marketing Manager</div>
+        <ul class="exp-bullets">
+          <li>Launched go-to-market strategies for two guaranteed return plans, driving large-scale online adoption.</li>
+          <li>Grew online channels 500% YoY and achieved 175% ROI-while cutting costs by 40%.</li>
+          <li>Boosted traffic-to-lead ratio by 87.5% through customer journey mapping and UI/UX optimization.</li>
+          <li>Conducted keyword research and built SEO-optimized pages to capture high-intent organic traffic.</li>
+        </ul>
+        <div class="exp-kpi-row">
+          <div class="exp-kpi"><span class="exp-kpi-num">500%</span> Channel Growth</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">87.5%</span> Lead Ratio Lift</div>
+          <div class="exp-kpi"><span class="exp-kpi-num">175%</span> ROI</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="sec-label reveal">Capabilities</div>
+  <h2 class="sec-title reveal">Skills &amp; <span>Expertise</span></h2>
+
+  <div class="skills-layout reveal">
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-name">Growth &amp; Marketing</div>
+        <div class="skill-bars">
+          <div class="skill-bar-row"><span class="skill-bar-name">Performance Marketing</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%"></div></div><span class="skill-bar-pct">95%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Growth Strategy</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div><span class="skill-bar-pct">90%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Marketing Automation</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div><span class="skill-bar-pct">88%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">A/B Testing &amp; CRO</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div><span class="skill-bar-pct">85%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Lead Generation</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div><span class="skill-bar-pct">92%</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-name">Data &amp; Analytics</div>
+        <div class="skill-bars">
+          <div class="skill-bar-row"><span class="skill-bar-name">Data Visualization</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div><span class="skill-bar-pct">92%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Google Analytics / GTM</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div><span class="skill-bar-pct">90%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Tableau / Looker Studio</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div><span class="skill-bar-pct">88%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Paid Media (Google/Meta)</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:94%"></div></div><span class="skill-bar-pct">94%</span></div>
+          <div class="skill-bar-row"><span class="skill-bar-name">Salesforce CRM</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div><span class="skill-bar-pct">80%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tools-cloud reveal">
+    <span class="tool-chip">Google Ads</span>
+    <span class="tool-chip">Meta Ads</span>
+    <span class="tool-chip">Bing Ads</span>
+    <span class="tool-chip">LinkedIn Ads</span>
+    <span class="tool-chip">Quora Ads</span>
+    <span class="tool-chip">Google Analytics</span>
+    <span class="tool-chip">Google Tag Manager</span>
+    <span class="tool-chip">Tableau</span>
+    <span class="tool-chip">Looker Studio</span>
+    <span class="tool-chip">Salesforce</span>
+    <span class="tool-chip">WhatsApp Automation</span>
+    <span class="tool-chip">Email Marketing</span>
+    <span class="tool-chip">SMS Workflows</span>
+    <span class="tool-chip">SEM / SEO</span>
+    <span class="tool-chip">Product Management</span>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+  <div class="sec-label reveal">Academic Background</div>
+  <h2 class="sec-title reveal">Education</h2>
+  <div class="edu-row reveal">
+    <div class="edu-card">
+      <div class="edu-degree">MBA in Marketing</div>
+      <div class="edu-school">NMIMS Mumbai</div>
+      <div class="edu-meta">2018 – 2020 &nbsp;·&nbsp; GPA 3.29 / 4.0<br>Case Competition Finalist × 3</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">B.Tech-Information Technology</div>
+      <div class="edu-school">Madras Institute of Technology, Chennai</div>
+      <div class="edu-meta">2013 – 2017 &nbsp;·&nbsp; GPA 8.39 / 10<br>Strong analytical &amp; technical foundation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+  <div class="sec-label reveal">Recognition</div>
+  <h2 class="sec-title reveal">Awards &amp; <span>Achievements</span></h2>
+  <div class="ach-list reveal">
+    <div class="ach-item">
+      <div class="ach-icon">🚀</div>
+      <div class="ach-body">
+        <div class="ach-title">Promoted to Senior Analyst-Growth Analytics within 18 months at MPOWER Financing</div>
+        <div class="ach-year">Nov 2025</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">🏆</div>
+      <div class="ach-body">
+        <div class="ach-title">Best Performer Award-Q1 &amp; Q2 at USDC Global</div>
+        <div class="ach-year">2023</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">⭐</div>
+      <div class="ach-body">
+        <div class="ach-title">Top 5% Achiever across ICICI Prudential Life Insurance</div>
+        <div class="ach-year">2021 – 2022</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">🎖️</div>
+      <div class="ach-body">
+        <div class="ach-title">3× Impact Award Winner at ICICI Prudential Life Insurance</div>
+        <div class="ach-year">2022 – 2023</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">🥇</div>
+      <div class="ach-body">
+        <div class="ach-title">Campus Winner-Optum Stratethon Case Study Competition</div>
+        <div class="ach-year">2019</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">🏅</div>
+      <div class="ach-body">
+        <div class="ach-title">National Finalist-Blackbuck Xccelerate Product Management Case Competition</div>
+        <div class="ach-year">2019</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-icon">🎯</div>
+      <div class="ach-body">
+        <div class="ach-title">Campus Finalist-Philips ThinkUp Challenge Case Study Competition</div>
+        <div class="ach-year">2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-tag">// Ready to Drive Your Growth</div>
+  <h2 class="cta-heading">LET'S BUILD<br><span>SOMETHING</span><br>BIG.</h2>
+  <p class="cta-sub">Looking for a Growth Manager who owns outcomes, not just activity metrics? Let's talk.</p>
+  <div class="cta-links">
+    <a href="mailto:makshay96@gmail.com" class="btn-primary">Email Me →</a>
+    <a href="https://linkedin.com/in/akshay-madhavan-576b67166" target="_blank" class="btn-ghost">View LinkedIn ↗</a>
+  </div>
+  <div class="cta-contact-info">
+    <div class="cta-info-item">
+      <span class="cta-info-label">Email</span>
+      <span class="cta-info-val">makshay96@gmail.com</span>
+    </div>
+    <div class="cta-info-item">
+      <span class="cta-info-label">Phone</span>
+      <span class="cta-info-val"><a href="tel:+919600112949">+91-9600112949</a></span>
+    </div>
+    <div class="cta-info-item">
+      <span class="cta-info-label">Location</span>
+      <span class="cta-info-val">Bengaluru, India</span>
+    </div>
+    <div class="cta-info-item">
+      <span class="cta-info-label">Open To</span>
+      <span class="cta-info-val">Hybrid, Remote </span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">AKSHAY<span>.</span>MADHAVAN</div>
+  <div class="footer-copy">Growth Manager · Bengaluru · 2025</div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Skill bar animation
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        setTimeout(() => bar.classList.add('animate'), 200);
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-layout').forEach(el => barObserver.observe(el));
+
+// Smooth number counter
+function animateCount(el, target, suffix) {
+  suffix = suffix || '';
+  let start = 0;
+  const dur = 1800;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const prog = Math.min((timestamp - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - prog, 3);
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (prog < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const numObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const num = entry.target.querySelector('.impact-num');
+      if (num) {
+        const raw = num.textContent.trim();
+        const digits = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+        const suffix = raw.replace(/[0-9]/g, '');
+        if (!isNaN(digits)) animateCount(num, digits, suffix);
+      }
+      numObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.impact-card').forEach(el => numObserver.observe(el));
+</script>
+</body>
+</html>

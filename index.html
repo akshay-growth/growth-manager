@@ -5,95 +5,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akshay Madhavan | Growth Analytics Leader</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #F9FAFB;
-  --surface: #FFFFFF;
-  --ink: #0F172A;
-  --ink2: #334155;
-  --muted: #64748B;
-
-  --primary: #2563EB;
-  --primary-soft: rgba(37,99,235,0.10);
-  --primary-glow: rgba(37,99,235,0.25);
-
-  --accent: #F59E0B;
-  --border: rgba(15,23,42,0.08);
+  --bg:#F8FAFC;
+  --surface:#FFFFFF;
+  --text:#0F172A;
+  --muted:#64748B;
+  --primary:#2563EB;
+  --soft:rgba(37,99,235,0.1);
 }
 
-body {
+body{
   margin:0;
-  font-family:'DM Sans', sans-serif;
+  font-family:'DM Sans',sans-serif;
   background:var(--bg);
-  color:var(--ink);
+  color:var(--text);
 }
 
-.section { padding:80px 20px; max-width:1100px; margin:auto; }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px;
+}
 
-h1,h2,h3 { font-family:'Syne', sans-serif; }
+section{
+  padding:100px 0;
+}
 
-.hero { padding:120px 20px; text-align:center; }
-.hero h1 { font-size:3rem; }
-.hero p { color:var(--muted); max-width:600px; margin:auto; }
+h1,h2{
+  font-family:'Syne',sans-serif;
+  letter-spacing:-1px;
+}
 
-.btn {
+h1{
+  font-size:clamp(3rem,6vw,5rem);
+}
+
+h2{
+  font-size:2rem;
+  margin-bottom:40px;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.btn{
   display:inline-block;
   margin-top:20px;
-  padding:12px 24px;
-  background:var(--primary);
+  padding:14px 28px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#2563EB,#1D4ED8);
   color:white;
-  border-radius:30px;
   text-decoration:none;
+  font-weight:600;
 }
 
-.case-study-card {
+.hero{
+  text-align:center;
+  padding-top:140px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+}
+
+/* CASE STUDIES */
+.card{
   background:var(--surface);
-  border:1px solid var(--border);
+  border:1px solid rgba(0,0,0,0.05);
   border-radius:16px;
+  padding:30px;
   margin-bottom:20px;
+  transition:0.3s;
 }
 
-.cs-header {
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  cursor:pointer;
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.06);
 }
 
-.cs-body { display:none; padding:20px; }
-.cs-body.open { display:block; }
-
-.cs-story { display:flex; flex-direction:column; gap:20px; }
-
-.cs-story-block {
-  border:1px solid var(--border);
-  padding:16px;
-  border-radius:10px;
-}
-
-.cs-story-block.highlight {
-  background:var(--primary-soft);
-}
-
-.cs-story-label {
-  font-size:0.7rem;
+.label{
+  font-size:12px;
   text-transform:uppercase;
   color:var(--primary);
   margin-bottom:6px;
+  font-weight:600;
 }
 
-.testimonial {
-  border:1px solid var(--border);
-  padding:20px;
-  border-radius:12px;
-  margin-top:20px;
+.highlight{
+  background:var(--soft);
+  border-left:4px solid var(--primary);
 }
 
-.footer {
-  text-align:center;
+/* GRID */
+.grid{
+  display:grid;
+  gap:20px;
+}
+
+.grid-2{
+  grid-template-columns:1fr 1fr;
+}
+
+@media(max-width:768px){
+  .grid-2{grid-template-columns:1fr;}
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  background:white;
+  padding:24px;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.testimonial img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  margin-top:12px;
+}
+
+footer{
   padding:40px;
+  text-align:center;
   background:#0F172A;
   color:white;
 }
@@ -103,76 +143,95 @@ h1,h2,h3 { font-family:'Syne', sans-serif; }
 <body>
 
 <section class="hero">
-<h1>Scaling Growth with Data</h1>
-<p>Akshay Madhavan, Growth Analytics Leader with 5+ years of experience driving scalable revenue through data-driven strategies.</p>
-<a href="#case-studies" class="btn">View Work</a>
+<div class="container">
+<h1>I Build Scalable Growth Systems</h1>
+<p>Growth Analytics Leader with 5+ years of experience driving revenue through data, experimentation, and full-funnel strategy.</p>
+<a href="#case" class="btn">View Case Studies</a>
+</div>
 </section>
 
-<section class="section" id="case-studies">
-<h2>Case Studies</h2>
+<section id="case">
+<div class="container">
+<h2>Selected Work</h2>
 
-<div class="case-study-card">
-<div class="cs-header" onclick="toggleCase(this)">
-<div>Scaling Paid Media to 6500% ROAS</div>
-<div>+</div>
-</div>
-<div class="cs-body">
-<div class="cs-story">
+<div class="card">
+<h3>Scaling Paid Media to 6500% ROAS</h3>
 
-<div class="cs-story-block">
-<div class="cs-story-label">Problem</div>
-<p>Paid campaigns were inefficient with rising costs.</p>
+<div class="grid grid-2">
+
+<div>
+<div class="label">Problem</div>
+<p>Performance plateaued due to inefficient spend and weak attribution.</p>
 </div>
 
-<div class="cs-story-block">
-<div class="cs-story-label">Insight</div>
-<p>High intent users were under-targeted.</p>
+<div>
+<div class="label">Insight</div>
+<p>High intent segments were underutilized while budgets were misallocated.</p>
 </div>
 
-<div class="cs-story-block">
-<div class="cs-story-label">Action</div>
-<ul>
-<li>Reallocated budgets</li>
-<li>Improved tracking</li>
-<li>A/B testing</li>
-</ul>
+<div>
+<div class="label">Action</div>
+<p>Restructured campaigns, improved tracking, and introduced continuous experimentation.</p>
 </div>
 
-<div class="cs-story-block highlight">
-<div class="cs-story-label">Impact</div>
-<p>6500% ROAS achieved.</p>
+<div class="highlight">
+<div class="label">Impact</div>
+<p>ROAS scaled from 1400% to 6500% with significant revenue growth.</p>
 </div>
 
 </div>
 </div>
+
+<div class="card">
+<h3>Driving 350% Revenue Growth</h3>
+
+<div class="grid grid-2">
+
+<div>
+<div class="label">Problem</div>
+<p>High acquisition costs and inconsistent lead quality.</p>
 </div>
 
+<div>
+<div class="label">Insight</div>
+<p>Targeting inefficiencies and poor funnel alignment.</p>
+</div>
+
+<div>
+<div class="label">Action</div>
+<p>Optimized targeting, improved landing pages, and aligned messaging.</p>
+</div>
+
+<div class="highlight">
+<div class="label">Impact</div>
+<p>350% revenue growth with reduced acquisition cost.</p>
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
 
-<section class="section">
+<section>
+<div class="container">
 <h2>Testimonials</h2>
 
 <div class="testimonial">
-<p>"Exceptional growth strategist"</p>
+<p>"Exceptional growth strategist with strong analytical thinking and execution."</p>
 <strong>Anirudh Singh Rathore</strong>
 <br>
-<img src="https://instagram.fblr25-1.fna.fbcdn.net/v/t51.82787-19/586653941_17923255872185451_8197182228144555678_n.jpg" width="60">
+<img src="https://instagram.fblr25-1.fna.fbcdn.net/v/t51.82787-19/586653941_17923255872185451_8197182228144555678_n.jpg">
 <br><br>
 <a href="https://www.linkedin.com/in/akshaygrowthmanager/details/recommendations/?detailScreenTabIndex=0" target="_blank">Explore full recommendations on LinkedIn →</a>
 </div>
 
+</div>
 </section>
 
-<div class="footer">
+<footer>
 © 2026 Akshay Madhavan
-</div>
-
-<script>
-function toggleCase(el){
- const body = el.nextElementSibling;
- body.classList.toggle('open');
-}
-</script>
+</footer>
 
 </body>
 </html>

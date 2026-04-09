@@ -3,1074 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshay Madhavan — Growth Analytics Leader | Performance Marketing | Bengaluru</title>
-<meta name="description" content="Akshay Madhavan is a Growth Analytics Leader with 5+ years turning data into compounding revenue. From 6500% ROAS to 170% YoY growth, he builds systems that scale. Open to Growth Manager roles in Bengaluru and Remote.">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://makshay96-dev.github.io/Portfolio/">
-<meta property="og:title" content="Akshay Madhavan — Growth Manager & Analytics Leader">
-<meta property="og:description" content="5+ years scaling growth engines. From ₹50L monthly budgets to 6500% ROAS — I build systems that compound. Open to Growth Manager roles.">
-<meta property="og:image" content="https://makshay96-dev.github.io/Portfolio/og-preview.png">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Akshay Madhavan — Growth Manager & Analytics Leader">
-<meta name="twitter:description" content="5+ years scaling growth engines. 6500% ROAS. 170% YoY growth. Open to opportunities.">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Akshay Madhavan | Growth Analytics Leader</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg: #FFF8F0;
+  --bg: #F9FAFB;
   --surface: #FFFFFF;
-  --ink: #1A1208;
-  --ink2: #3D2B10;
-  --muted: #8A7360;
-  --orange: #F4622A;
-  --orange-dim: rgba(244,98,42,0.10);
-  --orange-glow: rgba(244,98,42,0.30);
-  --amber: #F9A825;
-  --amber-dim: rgba(249,168,37,0.15);
-  --border: rgba(26,18,8,0.10);
-  --border-strong: rgba(26,18,8,0.18);
-  --page-pad: 56px;
-  --section-v: 96px;
+  --ink: #0F172A;
+  --ink2: #334155;
+  --muted: #64748B;
+
+  --primary: #2563EB;
+  --primary-soft: rgba(37,99,235,0.10);
+  --primary-glow: rgba(37,99,235,0.25);
+
+  --accent: #F59E0B;
+  --border: rgba(15,23,42,0.08);
 }
 
-html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  overflow-x: hidden;
-}
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(249,168,37,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 80% at 90% 100%, rgba(244,98,42,0.12) 0%, transparent 55%);
-  pointer-events: none; z-index: 0;
+  margin:0;
+  font-family:'DM Sans', sans-serif;
+  background:var(--bg);
+  color:var(--ink);
 }
 
-/* ─── NAV ─────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px var(--page-pad);
-  background: rgba(255,248,240,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: padding 0.3s, box-shadow 0.3s;
+.section { padding:80px 20px; max-width:1100px; margin:auto; }
+
+h1,h2,h3 { font-family:'Syne', sans-serif; }
+
+.hero { padding:120px 20px; text-align:center; }
+.hero h1 { font-size:3rem; }
+.hero p { color:var(--muted); max-width:600px; margin:auto; }
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  background:var(--primary);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
 }
-nav.scrolled { padding: 10px var(--page-pad); box-shadow: 0 4px 24px rgba(26,18,8,0.08); }
-.nav-logo { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.nav-logo span { color: var(--orange); }
-.nav-logo-img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); }
-.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-.nav-links a { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 2px; }
-.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--orange); border-radius: 2px; transition: width 0.25s; }
-.nav-links a:hover { color: var(--orange); }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-links a.active { color: var(--orange); }
-.nav-cta { padding: 9px 22px !important; background: var(--orange) !important; color: #fff !important; border-radius: 100px !important; font-weight: 700 !important; letter-spacing: 0.04em !important; transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important; }
-.nav-cta:hover { background: #D94E1E !important; transform: translateY(-1px); box-shadow: 0 6px 20px var(--orange-glow) !important; }
-.nav-cta::after { display: none !important; }
-/* Hamburger */
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 600; }
-.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-/* Mobile drawer */
-.nav-drawer { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,248,240,0.98); backdrop-filter: blur(20px); z-index: 490; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
-.nav-drawer.open { display: flex; }
-.nav-drawer a { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; transition: color 0.2s; }
-.nav-drawer a:hover { color: var(--orange); }
-.nav-drawer .drawer-cta { background: var(--orange); color: #fff; padding: 16px 40px; border-radius: 100px; font-size: 1.1rem; }
 
-/* ─── HERO ────────────────── */
-.hero {
-  min-height: 100vh; display: grid;
-  grid-template-columns: 1fr 220px;
-  grid-template-rows: 1fr auto;
-  column-gap: 48px; align-items: center;
-  padding: 120px var(--page-pad) 80px;
-  position: relative; z-index: 1;
+.case-study-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  margin-bottom:20px;
 }
-.hero-main { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; align-items: flex-start; }
-.hero-stats-bar { grid-column: 2; grid-row: 1 / 3; align-self: center; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(26,18,8,0.08); animation: fadeUp 0.7s 0.4s ease both; }
-.hero-scroll-row { grid-column: 1; grid-row: 2; padding-bottom: 0; }
 
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; background: var(--orange-dim); border: 1px solid rgba(244,98,42,0.25); border-radius: 100px; padding: 8px 18px; margin-bottom: 40px; width: fit-content; animation: fadeUp 0.7s ease both; }
-.eyebrow-dot { width: 7px; height: 7px; background: var(--orange); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
-@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 var(--orange-glow); } 50% { box-shadow: 0 0 0 7px transparent; } }
-.eyebrow-text { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--orange); letter-spacing: 0.06em; }
-
-.hero-headline { font-family: 'Syne', sans-serif; font-size: clamp(3.8rem, 9vw, 9rem); font-weight: 800; line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 16px; animation: fadeUp 0.7s 0.1s ease both; }
-.hero-headline .line2 { color: transparent; -webkit-text-stroke: 2px rgba(26,18,8,0.18); display: block; }
-.hero-headline .accent { color: var(--orange); }
-
-.hero-sub { font-size: clamp(0.95rem, 1.6vw, 1.15rem); font-weight: 300; color: var(--muted); max-width: 500px; line-height: 1.75; margin: 28px 0 44px; animation: fadeUp 0.7s 0.2s ease both; }
-.hero-sub strong { color: var(--ink); font-weight: 600; }
-.hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease both; }
-
-.hstat { padding: 22px 28px; border-bottom: 1px solid var(--border); text-align: center; transition: background 0.3s; }
-.hstat:last-child { border-bottom: none; }
-.hstat:hover { background: var(--orange-dim); }
-.hstat-val { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--orange); line-height: 1; letter-spacing: -0.02em; }
-.hstat-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; line-height: 1.4; }
-
-.scroll-hint { display: flex; align-items: center; gap: 12px; font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; animation: fadeUp 1s 0.8s ease both; padding-top: 40px; }
-.scroll-line { width: 40px; height: 1px; background: var(--border-strong); position: relative; overflow: hidden; }
-.scroll-line::after { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: var(--orange); animation: scanline 2s infinite; }
-@keyframes scanline { to { left: 100%; } }
-
-/* ─── BUTTONS ─────────────── */
-.btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 15px 32px; background: var(--orange); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 100px; transition: all 0.25s; white-space: nowrap; }
-.btn-primary:hover { background: #D94E1E; transform: translateY(-2px); box-shadow: 0 12px 36px var(--orange-glow); }
-.btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1.5px solid var(--border-strong); color: var(--muted); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 100px; transition: all 0.25s; background: transparent; white-space: nowrap; }
-.btn-ghost:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-dim); }
-
-/* ─── MARQUEE ─────────────── */
-.marquee-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 13px 0; background: var(--surface); position: relative; z-index: 1; }
-.marquee-track { display: flex; animation: marquee 25s linear infinite; width: max-content; }
-.marquee-item { display: flex; align-items: center; gap: 28px; padding: 0 28px; font-family: 'DM Mono', monospace; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; white-space: nowrap; }
-.marquee-dot { color: var(--orange); font-size: 0.5rem; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ─── SHARED SECTION ──────── */
-.section { position: relative; z-index: 1; padding: var(--section-v) var(--page-pad); border-top: 1px solid var(--border); }
-.impact-section { position: relative; z-index: 1; padding: var(--section-v) var(--page-pad); border-top: 1px solid var(--border); }
-.sec-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
-.sec-title { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 56px; line-height: 1.05; color: var(--ink); }
-.sec-title span { color: var(--orange); }
-.impact-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 36px; display: flex; align-items: center; gap: 16px; }
-.impact-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-/* ─── ABOUT ───────────────── */
-.about-section { position: relative; z-index: 1; padding: var(--section-v) var(--page-pad); border-top: 1px solid var(--border); }
-.about-layout { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
-.about-photo-wrap { position: relative; }
-.about-photo { width: 100%; aspect-ratio: 3/4; border-radius: 24px; overflow: hidden; background: linear-gradient(135deg, var(--amber-dim), var(--orange-dim)); border: 1px solid var(--border); box-shadow: 0 24px 60px rgba(26,18,8,0.12); }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.about-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
-.about-photo-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--amber)); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: white; }
-.about-photo-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.1em; text-align: center; padding: 0 20px; }
-.about-badge { position: absolute; bottom: -16px; right: -16px; background: var(--orange); color: white; border-radius: 16px; padding: 14px 20px; text-align: center; box-shadow: 0 12px 36px var(--orange-glow); }
-.about-badge-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; line-height: 1; }
-.about-badge-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.9; margin-top: 4px; }
-.about-content { padding-top: 8px; }
-.about-tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
-.about-headline { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 28px; color: var(--ink); }
-.about-headline span { color: var(--orange); }
-.about-body { font-size: 1rem; line-height: 1.8; color: var(--ink2); margin-bottom: 20px; font-weight: 300; }
-.about-body strong { color: var(--ink); font-weight: 600; }
-.about-stats { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
-.about-stat { display: flex; flex-direction: column; gap: 4px; }
-.about-stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--orange); letter-spacing: -0.02em; }
-.about-stat-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* ─── IMPACT GRID ─────────── */
-.impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.impact-card { padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; position: relative; overflow: hidden; transition: all 0.3s; box-shadow: 0 4px 20px rgba(26,18,8,0.04); }
-.impact-card:hover { transform: translateY(-4px); border-color: var(--orange); box-shadow: 0 20px 50px rgba(244,98,42,0.12); }
-.impact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--amber)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-.impact-card:hover::before { transform: scaleX(1); }
-.impact-num { font-family: 'Syne', sans-serif; font-size: 3.6rem; font-weight: 800; line-height: 1; color: var(--orange); letter-spacing: -0.03em; margin-bottom: 10px; }
-.impact-desc { font-size: 0.8rem; font-weight: 400; color: var(--muted); line-height: 1.6; }
-.impact-company { display: inline-block; margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--orange); opacity: 0.7; letter-spacing: 0.08em; background: var(--orange-dim); padding: 4px 10px; border-radius: 100px; }
-
-/* ─── PHILOSOPHY ──────────── */
-.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.approach-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 44px 36px; position: relative; overflow: hidden; transition: all 0.3s; box-shadow: 0 4px 20px rgba(26,18,8,0.04); }
-.approach-card:hover { transform: translateY(-4px); border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
-.approach-icon { font-size: 2.2rem; margin-bottom: 20px; display: block; }
-.approach-title { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--ink); }
-.approach-body { font-size: 0.82rem; line-height: 1.75; color: var(--muted); }
-.approach-num { position: absolute; bottom: 20px; right: 28px; font-family: 'Syne', sans-serif; font-size: 5rem; font-weight: 800; color: rgba(244,98,42,0.06); line-height: 1; letter-spacing: -0.04em; }
-
-/* ─── CASE STUDIES ────────── */
-.case-studies-grid { display: flex; flex-direction: column; gap: 2px; }
-.case-study-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; box-shadow: 0 4px 20px rgba(26,18,8,0.04); }
-.case-study-card:hover { border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
-.cs-header { display: grid; grid-template-columns: 1fr auto; align-items: start; padding: 48px 56px; gap: 40px; cursor: pointer; }
-.cs-header:hover .cs-expand { color: var(--orange); }
-.cs-meta { display: flex; flex-direction: column; gap: 16px; }
-.cs-num { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--orange); letter-spacing: 0.15em; }
-.cs-title { font-family: 'Syne', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
-.cs-company-row { display: flex; align-items: center; gap: 12px; }
-.cs-co { font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); }
-.cs-result-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-.cs-chip { padding: 6px 14px; background: var(--orange-dim); border: 1px solid rgba(244,98,42,0.2); font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 600; color: var(--orange); border-radius: 100px; }
-.cs-expand { font-size: 1.5rem; color: var(--muted); transition: transform 0.3s, color 0.2s; flex-shrink: 0; margin-top: 4px; user-select: none; }
-.cs-expand.open { transform: rotate(45deg); color: var(--orange); }
-.cs-body { display: none; padding: 0 56px 56px; border-top: 1px solid var(--border); margin-top: 0; }
-.cs-body.open { display: block; }
-.cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
-.cs-block { }
-.cs-block-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-.cs-block-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-.cs-block-text { font-size: 0.88rem; line-height: 1.75; color: var(--ink2); }
-.cs-block-text strong { color: var(--ink); font-weight: 600; }
-.cs-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
-.cs-steps li { display: flex; gap: 12px; font-size: 0.85rem; line-height: 1.65; color: var(--ink2); }
-.cs-steps li::before { content: '▸'; color: var(--orange); font-size: 0.65rem; flex-shrink: 0; margin-top: 4px; }
-.cs-insight-box { margin-top: 32px; background: linear-gradient(135deg, var(--orange-dim), var(--amber-dim)); border: 1px solid rgba(244,98,42,0.2); border-radius: 16px; padding: 28px 32px; }
-.cs-insight-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
-.cs-insight-text { font-size: 0.9rem; line-height: 1.7; color: var(--ink); font-weight: 500; }
-.cs-full-width { grid-column: 1 / -1; }
-
-/* ─── EXPERIENCE ──────────── */
-.exp-timeline { display: flex; flex-direction: column; }
-.exp-row { display: grid; grid-template-columns: 220px 1fr; border-top: 1px solid var(--border); padding: 48px 0; gap: 0; position: relative; transition: background 0.2s, padding 0.2s, border-radius 0.2s; }
-.exp-row:last-child { border-bottom: 1px solid var(--border); }
-.exp-row:hover { background: var(--orange-dim); border-top-color: transparent; border-radius: 16px; padding-left: 20px; padding-right: 20px; }
-.exp-row:last-child:hover { border-bottom-color: transparent; }
-.exp-left { padding-right: 40px; padding-top: 4px; }
-.exp-period { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
-.exp-co { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
-.exp-badge { display: inline-block; padding: 5px 12px; background: var(--amber-dim); border: 1px solid rgba(249,168,37,0.35); font-family: 'DM Mono', monospace; font-size: 0.58rem; color: #B45309; letter-spacing: 0.06em; border-radius: 100px; margin-top: 12px; }
-.exp-title { font-family: 'Syne', sans-serif; font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 20px; color: var(--ink); }
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.exp-bullets li { display: flex; gap: 14px; font-size: 0.85rem; font-weight: 400; line-height: 1.65; color: var(--ink2); }
-.exp-bullets li::before { content: '▸'; color: var(--orange); font-size: 0.65rem; flex-shrink: 0; margin-top: 4px; }
-.exp-kpi-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
-.exp-kpi { display: flex; align-items: center; gap: 8px; padding: 7px 16px; background: var(--surface); border: 1px solid var(--border); font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--orange); border-radius: 100px; box-shadow: 0 2px 8px rgba(26,18,8,0.04); }
-.exp-kpi-num { font-size: 0.92rem; font-weight: 500; }
-
-/* ─── SKILLS ──────────────── */
-.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.skill-group-name { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-.skill-bars { display: flex; flex-direction: column; gap: 14px; }
-.skill-bar-row { display: flex; align-items: center; gap: 14px; }
-.skill-bar-name { font-size: 0.82rem; font-weight: 500; color: var(--ink); min-width: 160px; flex-shrink: 0; }
-.skill-bar-track { flex: 1; height: 4px; background: var(--border); border-radius: 100px; overflow: hidden; }
-.skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--orange), var(--amber)); width: 0; border-radius: 100px; transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
-.skill-bar-fill.animate { width: var(--w); }
-.skill-bar-pct { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); min-width: 32px; text-align: right; }
-.tools-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; }
-.tool-chip { padding: 9px 18px; border: 1px solid var(--border); font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; transition: all 0.2s; cursor: default; background: var(--surface); border-radius: 100px; box-shadow: 0 2px 8px rgba(26,18,8,0.04); }
-.tool-chip:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-dim); transform: translateY(-2px); }
-
-/* ─── TESTIMONIALS ────────── */
-.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.testimonial-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 36px; position: relative; overflow: hidden; transition: all 0.3s; box-shadow: 0 4px 20px rgba(26,18,8,0.04); }
-.testimonial-card:hover { transform: translateY(-4px); border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
-.testimonial-card::before { content: '\201C'; position: absolute; top: 16px; right: 24px; font-family: 'Syne', sans-serif; font-size: 5rem; color: rgba(244,98,42,0.08); line-height: 1; font-weight: 800; }
-.testimonial-quote { font-size: 0.88rem; line-height: 1.8; color: var(--ink2); margin-bottom: 28px; position: relative; z-index: 1; font-style: italic; }
-.testimonial-author { display: flex; align-items: center; gap: 14px; }
-.testimonial-avatar-link { flex-shrink: 0; text-decoration: none; }
-.testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--amber)); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 800; color: white; overflow: hidden; border: 2px solid var(--border); transition: border-color 0.2s; }
-.testimonial-avatar-link:hover .testimonial-avatar { border-color: var(--orange); }
-.testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.testimonial-name-link { text-decoration: none; }
-.testimonial-name { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--ink); transition: color 0.2s; }
-.testimonial-name-link:hover .testimonial-name { color: var(--orange); }
-.testimonial-role { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--orange); letter-spacing: 0.06em; margin-top: 3px; }
-.testimonial-context { font-family: 'DM Mono', monospace; font-size: 0.56rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
-.testimonial-stars { display: flex; gap: 3px; margin-bottom: 16px; }
-.testimonial-stars span { color: var(--amber); font-size: 0.8rem; }
-
-/* ─── EDUCATION ───────────── */
-.edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.edu-card { padding: 44px 40px; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); position: relative; overflow: hidden; transition: all 0.3s; box-shadow: 0 4px 20px rgba(26,18,8,0.04); }
-.edu-card:hover { transform: translateY(-3px); border-color: rgba(244,98,42,0.3); box-shadow: 0 20px 50px rgba(244,98,42,0.10); }
-.edu-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--amber)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
-.edu-card:hover::after { transform: scaleX(1); }
-.edu-degree { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; line-height: 1.15; }
-.edu-school { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 18px; }
-.edu-meta { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); line-height: 1.75; }
-
-/* ─── ACHIEVEMENTS ────────── */
-.ach-list { display: flex; flex-direction: column; }
-.ach-item { display: flex; align-items: flex-start; gap: 24px; padding: 22px 0; border-top: 1px solid var(--border); transition: padding-left 0.2s; }
-.ach-item:last-child { border-bottom: 1px solid var(--border); }
-.ach-item:hover { padding-left: 12px; }
-.ach-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
-.ach-body { flex: 1; }
-.ach-title { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.45; }
-.ach-year { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--orange); opacity: 0.75; }
-
-/* ─── CTA ─────────────────── */
-.cta-section { position: relative; z-index: 1; padding: 120px var(--page-pad); text-align: center; border-top: 1px solid var(--border); overflow: hidden; background: var(--surface); }
-.cta-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(249,168,37,0.12) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(244,98,42,0.10) 0%, transparent 60%); pointer-events: none; }
-.cta-tag { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; display: inline-block; background: var(--orange-dim); padding: 8px 18px; border-radius: 100px; border: 1px solid rgba(244,98,42,0.2); }
-.cta-heading { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 24px; color: var(--ink); }
-.cta-heading span { color: var(--orange); }
-.cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 460px; margin: 0 auto 48px; line-height: 1.7; }
-.cta-links { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
-.cta-contact-info { display: flex; gap: 40px; justify-content: center; margin-top: 52px; flex-wrap: wrap; }
-.cta-info-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.cta-info-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
-.cta-info-val { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-.cta-info-val a { color: inherit; text-decoration: none; }
-.cta-info-val a:hover { color: var(--orange); }
-
-/* ─── FOOTER ──────────────── */
-footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
-.footer-logo { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.01em; color: rgba(255,255,255,0.5); }
-.footer-logo span { color: var(--orange); }
-.footer-copy { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
-
-/* ─── ANIMATIONS ──────────── */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ─── RESPONSIVE ──────────── */
-@media (max-width: 1200px) {
-  :root { --page-pad: 40px; }
-  .impact-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero { grid-template-columns: 1fr 200px; column-gap: 32px; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .about-layout { grid-template-columns: 280px 1fr; gap: 48px; }
+.cs-header {
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
 }
-@media (max-width: 900px) {
-  .about-layout { grid-template-columns: 1fr; }
-  .about-photo-wrap { max-width: 300px; }
-  .cs-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
+
+.cs-body { display:none; padding:20px; }
+.cs-body.open { display:block; }
+
+.cs-story { display:flex; flex-direction:column; gap:20px; }
+
+.cs-story-block {
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:10px;
 }
-@media (max-width: 768px) {
-  :root { --page-pad: 20px; --section-v: 60px; }
-  nav { padding: 12px var(--page-pad); }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero { display: flex; flex-direction: column; align-items: flex-start; padding: 100px var(--page-pad) 60px; min-height: auto; }
-  .hero-main { width: 100%; }
-  .hero-stats-bar { display: none; }
-  .hero-scroll-row { padding-top: 32px; }
-  .hero-headline { font-size: clamp(3rem, 14vw, 5rem); }
-  .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
-  .btn-primary, .btn-ghost { text-align: center; justify-content: center; }
-  .impact-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .impact-num { font-size: 2.8rem; }
-  .approach-grid { grid-template-columns: 1fr; }
-  .exp-row { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
-  .exp-left { padding-right: 0; }
-  .exp-title { font-size: 1.5rem; }
-  .skills-layout { grid-template-columns: 1fr; gap: 36px; }
-  .edu-row { grid-template-columns: 1fr; }
-  .cta-section { padding: 80px var(--page-pad); }
-  .cta-contact-info { flex-direction: column; align-items: center; gap: 24px; }
-  footer { padding: 24px var(--page-pad); flex-direction: column; gap: 12px; text-align: center; }
-  .cs-header { padding: 32px 24px; }
-  .cs-body { padding: 0 24px 40px; }
+
+.cs-story-block.highlight {
+  background:var(--primary-soft);
 }
-@media (max-width: 480px) {
-  .impact-grid { grid-template-columns: 1fr; }
-  .exp-kpi-row { flex-direction: column; gap: 8px; }
+
+.cs-story-label {
+  font-size:0.7rem;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:6px;
+}
+
+.testimonial {
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.footer {
+  text-align:center;
+  padding:40px;
+  background:#0F172A;
+  color:white;
 }
 </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav id="main-nav">
-  <a href="#" class="nav-logo">
-    <img class="nav-logo-img" src="https://media.licdn.com/dms/image/v2/D5603AQH11QsrD-sH2w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730726026436?e=1777507200&v=beta&t=q1fZZNbVZEvRiFKPbl0B5T-EkshIYnL_d8SjWy9ShO0" alt="Akshay Madhavan">
-    AKSHAY<span>.</span>
-  </a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#impact">Impact</a></li>
-    <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- MOBILE DRAWER -->
-<div class="nav-drawer" id="nav-drawer">
-  <a href="#about" class="drawer-link">About</a>
-  <a href="#impact" class="drawer-link">Impact</a>
-  <a href="#case-studies" class="drawer-link">Case Studies</a>
-  <a href="#experience" class="drawer-link">Experience</a>
-  <a href="#skills" class="drawer-link">Skills</a>
-  <a href="#testimonials" class="drawer-link">Testimonials</a>
-  <a href="#contact" class="drawer-cta">Hire Me →</a>
-</div>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-main">
-    <div class="hero-eyebrow">
-      <div class="eyebrow-dot"></div>
-      <span class="eyebrow-text">// Open to Growth Manager Roles · Bengaluru &amp; Remote</span>
-    </div>
-    <h1 class="hero-headline">
-      I SCALE<br>
-      <span class="line2">GROWTH</span><br>
-      <span class="accent">ENGINES.</span>
-    </h1>
-    <p class="hero-sub">
-      <strong>Akshay Madhavan</strong> — Growth Analytics Leader with 5+ years turning data into
-      revenue. From <strong>₹50L monthly budgets</strong> to <strong>6500% ROAS</strong>,
-      I build systems that compound.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:makshay96@gmail.com" class="btn-primary">Let's Talk Growth →</a>
-      <a href="https://www.linkedin.com/in/akshaygrowthmanager/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-    </div>
-  </div>
-  <div class="hero-stats-bar">
-    <div class="hstat"><div class="hstat-val">6500%</div><div class="hstat-label">Peak<br>ROAS</div></div>
-    <div class="hstat"><div class="hstat-val">170%</div><div class="hstat-label">YoY Revenue<br>Growth</div></div>
-    <div class="hstat"><div class="hstat-val">350%</div><div class="hstat-label">Revenue Growth<br>USDC</div></div>
-    <div class="hstat"><div class="hstat-val">500%</div><div class="hstat-label">Online Channel<br>Growth</div></div>
-    <div class="hstat"><div class="hstat-val">5+</div><div class="hstat-label">Years of<br>Experience</div></div>
-  </div>
-  <div class="hero-scroll-row scroll-hint">
-    <div class="scroll-line"></div>
-    SCROLL TO EXPLORE
-  </div>
+<h1>Scaling Growth with Data</h1>
+<p>Akshay Madhavan, Growth Analytics Leader with 5+ years of experience driving scalable revenue through data-driven strategies.</p>
+<a href="#case-studies" class="btn">View Work</a>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item">Growth Analytics <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Paid Media Strategy <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Marketing Automation <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">ROAS Optimization <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Data-Driven Decisions <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Revenue Scaling <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">A/B Testing <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Full-Funnel Growth <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Growth Analytics <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Paid Media Strategy <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Marketing Automation <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">ROAS Optimization <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Data-Driven Decisions <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Revenue Scaling <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">A/B Testing <span class="marquee-dot">✦</span></div>
-    <div class="marquee-item">Full-Funnel Growth <span class="marquee-dot">✦</span></div>
-  </div>
-</div>
-
-<!-- ABOUT ME -->
-<section class="about-section" id="about">
-  <div class="about-layout reveal">
-    <div class="about-photo-wrap">
-      <div class="about-photo">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQH11QsrD-sH2w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730726026436?e=1777507200&v=beta&t=q1fZZNbVZEvRiFKPbl0B5T-EkshIYnL_d8SjWy9ShO0" alt="Akshay Madhavan — Growth Analytics Leader">
-      </div>
-      <div class="about-badge">
-        <div class="about-badge-num">5+</div>
-        <div class="about-badge-label">Years<br>in Growth</div>
-      </div>
-    </div>
-    <div class="about-content">
-      <div class="about-tag">// About Me</div>
-      <h2 class="about-headline">I don't just run campaigns — I build <span>growth systems</span>.</h2>
-      <p class="about-body">
-        I'm Akshay Madhavan, a <strong>Growth Analytics Leader</strong> based in Bengaluru with a rare mix of analytical rigor and full-funnel marketing ownership. My career spans fintech, edtech, and insurance — three industries where the stakes are high, the audiences are complex, and the margin for error is slim.
-      </p>
-      <p class="about-body">
-        I started as an engineer (B.Tech, MIT Chennai) before pivoting into marketing through an MBA at NMIMS. That technical foundation shapes everything I do: I think in <strong>data pipelines and conversion funnels</strong>, not just campaigns. I've managed ₹50L+ monthly budgets, scaled ROAS from 1400% to 6500%, and built automation systems that saved teams hundreds of hours every month.
-      </p>
-      <p class="about-body">
-        Whether I'm redesigning a product page to double conversion rates, reverse-engineering competitor strategy from SimilarWeb data, or convincing a C-suite to reinvest in paid media with a data-backed case — I operate at the intersection of <strong>strategy, analytics, and execution</strong>.
-      </p>
-      <div class="about-stats">
-        <div class="about-stat"><div class="about-stat-num">₹50L+</div><div class="about-stat-label">Monthly Ad Budget</div></div>
-        <div class="about-stat"><div class="about-stat-num">100+</div><div class="about-stat-label">Hours Saved / Month</div></div>
-        <div class="about-stat"><div class="about-stat-num">3</div><div class="about-stat-label">Industries Scaled</div></div>
-        <div class="about-stat"><div class="about-stat-num">9+</div><div class="about-stat-label">Countries Managed</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT NUMBERS -->
-<div class="impact-section" id="impact">
-  <div class="impact-label reveal">Key Growth Metrics</div>
-  <div class="impact-grid reveal">
-    <div class="impact-card">
-      <div class="impact-num">6500%</div>
-      <div class="impact-desc">ROAS scaled from 1400% — paid media overhaul across all channels</div>
-      <span class="impact-company">MPOWER Financing</span>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num">170%</div>
-      <div class="impact-desc">Year-over-year revenue growth driven by weekly analytics insights</div>
-      <span class="impact-company">MPOWER Financing</span>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num">350%</div>
-      <div class="impact-desc">Revenue growth achieved while cutting Cost Per Sale by 30%</div>
-      <span class="impact-company">USDC Global</span>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num">500%</div>
-      <div class="impact-desc">Online channel growth with 175% ROI and 40% cost reduction</div>
-      <span class="impact-company">ICICI Prudential Life</span>
-    </div>
-  </div>
-</div>
-
-<!-- GROWTH PHILOSOPHY -->
-<section class="section">
-  <div class="sec-label reveal">How I Operate</div>
-  <h2 class="sec-title reveal">Growth <span>Philosophy</span></h2>
-  <div class="approach-grid reveal">
-    <div class="approach-card">
-      <span class="approach-icon">📊</span>
-      <div class="approach-title">Data First, Always</div>
-      <div class="approach-body">Every growth decision is anchored in data. I build dashboards, automate reporting, and establish KPI frameworks so teams act on signals — not just gut feel.</div>
-      <div class="approach-num">01</div>
-    </div>
-    <div class="approach-card">
-      <span class="approach-icon">⚡</span>
-      <div class="approach-title">Full-Funnel Ownership</div>
-      <div class="approach-body">I own the entire growth loop — from paid acquisition and landing page CRO to lead nurturing automation. I don't hand off, I close loops.</div>
-      <div class="approach-num">02</div>
-    </div>
-    <div class="approach-card">
-      <span class="approach-icon">🔁</span>
-      <div class="approach-title">Compound &amp; Automate</div>
-      <div class="approach-body">Manual work doesn't scale. I build automated systems — reporting, workflows and tagging — that free teams to focus on strategy, not execution.</div>
-      <div class="approach-num">03</div>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDIES -->
 <section class="section" id="case-studies">
-  <div class="sec-label reveal">Proof of Work</div>
-  <h2 class="sec-title reveal">Case <span>Studies</span></h2>
-  <div class="case-studies-grid reveal">
+<h2>Case Studies</h2>
 
-    <!-- Case Study 1 -->
-    <div class="case-study-card">
-      <div class="cs-header" onclick="toggleCS(this)">
-        <div class="cs-meta">
-          <div class="cs-num">Case Study 01</div>
-          <div class="cs-title">From Information to Story: How Redesigning a Product Page Almost Doubled Conversions</div>
-          <div class="cs-company-row">
-            <span class="cs-co">ICICI Prudential Life Insurance</span>
-          </div>
-          <div class="cs-result-chips">
-            <span class="cs-chip">87.5% Lift in Traffic-to-Lead</span>
-            <span class="cs-chip">7.5% → 14% Conversion Rate</span>
-            <span class="cs-chip">UX + CRO</span>
-          </div>
-        </div>
-        <div class="cs-expand">+</div>
-      </div>
-      <div class="cs-body">
-        <div class="cs-grid">
-          <div class="cs-block">
-            <div class="cs-block-label">The Problem</div>
-            <div class="cs-block-text">
-              The landing page for ICICI Prudential Life's guaranteed return plan was a wall of information — product features, policy terms, benefit tables — all structured for compliance, not for customers. <strong>Traffic-to-lead conversion sat at 7.5%.</strong> Visitors were arriving, reading, and leaving without acting. We knew the product was strong. The page wasn't doing it justice.
-            </div>
-          </div>
-          <div class="cs-block">
-            <div class="cs-block-label">What We Did</div>
-            <ul class="cs-steps">
-              <li><strong>Mobile-first redesign:</strong> Rebuilt the entire page architecture starting from the smallest screen, ensuring every element earned its space.</li>
-              <li><strong>Storified structure:</strong> Replaced information-dump layout with a narrative flow — opened with a powerful headline featuring 2 core benefits on the first fold.</li>
-              <li><strong>Online benefit hook:</strong> Surfaced the digital-exclusive benefit prominently in the hero fold to incentivise immediate action.</li>
-              <li><strong>Persona-based recommendation:</strong> Added "Recommended for you" section matching user profiles to plan benefits.</li>
-              <li><strong>How the plan works:</strong> Created illustrated step-by-step explanation with an embedded video — reducing cognitive load on complex insurance mechanics.</li>
-              <li><strong>3 simple steps to buy:</strong> Collapsed the purchase journey into a visual three-step guide.</li>
-              <li><strong>Trust layer:</strong> Added "Why choose ICICI Prudential Life?" with verified trust markers (awards, claim settlement ratio, customer base).</li>
-              <li><strong>FAQs from real customers:</strong> Compiled questions directly from call recordings and sales team interviews — not generic FAQs.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cs-insight-box">
-          <div class="cs-insight-label">💡 Key Insight</div>
-          <div class="cs-insight-text">Relevant information, presented in the right sequence, converts better than more information. Customers don't need to know everything — they need to understand enough to act. By moving from an information architecture to a storytelling architecture (and doubling the page length to do it), traffic-to-lead conversion grew <strong>from 7.5% to 14% — an 87.5% increase</strong>. The insight echoed across every product page we touched after this.</div>
-        </div>
-      </div>
-    </div>
+<div class="case-study-card">
+<div class="cs-header" onclick="toggleCase(this)">
+<div>Scaling Paid Media to 6500% ROAS</div>
+<div>+</div>
+</div>
+<div class="cs-body">
+<div class="cs-story">
 
-    <!-- Case Study 2 -->
-    <div class="case-study-card">
-      <div class="cs-header" onclick="toggleCS(this)">
-        <div class="cs-meta">
-          <div class="cs-num">Case Study 02</div>
-          <div class="cs-title">90 Minutes to 10 Minutes: Automating Budget Reporting Across Marketing Platforms</div>
-          <div class="cs-company-row">
-            <span class="cs-co">USDC Global → MPOWER Financing</span>
-          </div>
-          <div class="cs-result-chips">
-            <span class="cs-chip">89% Time Reduction</span>
-            <span class="cs-chip">100+ Hours Saved / Month</span>
-            <span class="cs-chip">Marketing Automation</span>
-          </div>
-        </div>
-        <div class="cs-expand">+</div>
-      </div>
-      <div class="cs-body">
-        <div class="cs-grid">
-          <div class="cs-block">
-            <div class="cs-block-label">The Problem</div>
-            <div class="cs-block-text">
-              Every month, the marketing team spent <strong>90+ minutes manually consolidating ad performance data</strong> across Google Ads, Meta, and CRM platforms into a budget report. The process was error-prone, repetitive, and left no time for analysis. The report answered "what happened" — never "what should we do next." Budget decisions were being made on stale data, often days after the fact.
-            </div>
-          </div>
-          <div class="cs-block">
-            <div class="cs-block-label">What We Did</div>
-            <ul class="cs-steps">
-              <li><strong>Mapped all data sources:</strong> Audited every platform feeding into the report — Google Ads, Meta Ads Manager, CRM exports, and manual trackers.</li>
-              <li><strong>Built a unified budget consolidation sheet:</strong> Created a single master dashboard using automated API pulls and structured data templates that refreshed daily.</li>
-              <li><strong>Cross-platform normalization:</strong> Standardized KPIs (spend, impressions, conversions, CAC) across platforms into a single comparable view.</li>
-              <li><strong>Predictive layer:</strong> Added month-end projection formulas using pacing rates — so the team could see budget burn trajectory and course-correct mid-month.</li>
-              <li><strong>Replicated at MPOWER:</strong> Adapted the same system for MPOWER Financing's global paid media operation across 9+ countries, reducing reporting time from 80 minutes to under 10.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cs-insight-box">
-          <div class="cs-insight-label">💡 Key Insight</div>
-          <div class="cs-insight-text">The real cost of manual reporting isn't the 90 minutes — it's the <strong>strategic decisions that never happen</strong> because the team is too busy building the report. By automating the consolidation layer, we unlocked time for weekly budget optimization, scenario planning, and channel rebalancing. At MPOWER, this system alone freed up <strong>~100 hours per month</strong> across the team — time that directly contributed to the ROAS scaling work that followed.</div>
-        </div>
-      </div>
-    </div>
+<div class="cs-story-block">
+<div class="cs-story-label">Problem</div>
+<p>Paid campaigns were inefficient with rising costs.</p>
+</div>
 
-    <!-- Case Study 3 -->
-    <div class="case-study-card">
-      <div class="cs-header" onclick="toggleCS(this)">
-        <div class="cs-meta">
-          <div class="cs-num">Case Study 03</div>
-          <div class="cs-title">Reviving Paid Media: From Zero to 6500% ROAS Across 9+ Countries</div>
-          <div class="cs-company-row">
-            <span class="cs-co">MPOWER Financing</span>
-          </div>
-          <div class="cs-result-chips">
-            <span class="cs-chip">6500% Peak ROAS</span>
-            <span class="cs-chip">170% YoY Revenue Growth</span>
-            <span class="cs-chip">9+ Countries Scaled</span>
-            <span class="cs-chip">Paid Media Strategy</span>
-          </div>
-        </div>
-        <div class="cs-expand">+</div>
-      </div>
-      <div class="cs-body">
-        <div class="cs-grid">
-          <div class="cs-block">
-            <div class="cs-block-label">The Problem</div>
-            <div class="cs-block-text">
-              In early 2025, MPOWER Financing paused all paid media. The intent was cost savings — but the data told a different story. <strong>HVID volumes in India fell below 2022 levels.</strong> In Ghana and Nigeria, growth stalled at 1.0x year-over-year. Competitors (Prodigy Finance, Avanse) began bidding on MPOWER's own branded keywords, capturing high-intent traffic that should have been ours. Brand search volume — a leading indicator of awareness — flatlined for the first time in three years. Organic and affiliate channels, without paid media amplification, could not compensate. The funnel was starving at the top.
-            </div>
-          </div>
-          <div class="cs-block">
-            <div class="cs-block-label">What We Observed</div>
-            <ul class="cs-steps">
-              <li>MPOWER's share of India web traffic dropped by 26.38 percentage points while Prodigy (↑7.37pp) and Avanse (↑7.29pp) gained.</li>
-              <li>Even after pausing paid, residual conversions continued — 15% of ID Verified app submits still attributed to past paid campaigns via cookie retention (90 days) and browser auto-fill.</li>
-              <li>54% of paid media impact came from awareness campaigns, not just branded search — proving the upper funnel was driving delayed conversions months later.</li>
-              <li>A 2024 analysis showed $7.6M in paid spend drove $75.3M in total funnel value (10% CAC) when cross-channel uplift was included.</li>
-            </ul>
-          </div>
-          <div class="cs-block cs-full-width">
-            <div class="cs-block-label">The Strategy We Built</div>
-            <ul class="cs-steps">
-              <li><strong>Data-backed business case:</strong> Built a comprehensive paid media investigation (presented to leadership) quantifying the cost of not advertising — lost brand share, stalled HVID volumes, competitor gains.</li>
-              <li><strong>Phased pilot approach:</strong> Proposed a $150K phased pilot (Phase 1: Aug–Sep, Phase 2: Oct–Nov) targeting three market types — defend markets (India, Nigeria, Ghana), expand markets (Bangladesh, Nepal, Pakistan), and domestic markets (US, Canada).</li>
-              <li><strong>AdAi integration:</strong> Deployed AdAi for branded keyword campaigns — a tool that only bids when competitors are actively bidding, reducing average CPC by 28% and saving $4K in the initial test window.</li>
-              <li><strong>Signal-based targeting:</strong> Worked with iQuanti to expand application-stage tagging, feeding real-time quality signals back to Google — improving Eligibles-to-ID Verified conversion from 25% to 28%.</li>
-              <li><strong>Country-level playbooks:</strong> Assigned defensive vs. offensive strategies per market based on competition intensity, organic penetration, and referral network strength.</li>
-              <li><strong>Scaled to profitability:</strong> From the pilot, steadily expanded across markets, optimizing channel mix, creative, and audience targeting — ultimately reaching 6500% ROAS and contributing to 170% YoY revenue growth.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cs-insight-box">
-          <div class="cs-insight-label">💡 Key Insight</div>
-          <div class="cs-insight-text">Paid media has a long tail — and an equally long <em>absence</em> tail. When you stop advertising, the damage doesn't show immediately (cookies persist, direct traffic buffers the drop), but the compounding erosion shows up 2–3 quarters later across every channel. The playbook for reviving paid isn't just about turning campaigns back on — it's about <strong>making the case with data, starting with precision, and scaling only what the numbers justify</strong>. That's how a $150K pilot became a global operation running at 6500% ROAS.</div>
-        </div>
-      </div>
-    </div>
+<div class="cs-story-block">
+<div class="cs-story-label">Insight</div>
+<p>High intent users were under-targeted.</p>
+</div>
 
-  </div>
+<div class="cs-story-block">
+<div class="cs-story-label">Action</div>
+<ul>
+<li>Reallocated budgets</li>
+<li>Improved tracking</li>
+<li>A/B testing</li>
+</ul>
+</div>
+
+<div class="cs-story-block highlight">
+<div class="cs-story-label">Impact</div>
+<p>6500% ROAS achieved.</p>
+</div>
+
+</div>
+</div>
+</div>
+
 </section>
 
-<!-- EXPERIENCE -->
-<section class="section" id="experience">
-  <div class="sec-label reveal">Career Timeline</div>
-  <h2 class="sec-title reveal">Work <span>Experience</span></h2>
-  <div class="exp-timeline">
-    <div class="exp-row reveal">
-      <div class="exp-left">
-        <div class="exp-period">May 2024–Present<br>Bengaluru</div>
-        <div class="exp-co">MPOWER Financing (Fintech)</div>
-        <div class="exp-badge">▲ Promoted Nov 2025</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-title">Senior Analyst—Growth Analytics</div>
-        <ul class="exp-bullets">
-          <li>Owned end-to-end analytics for the digital marketing team, delivering weekly insights that drove 170% YoY revenue growth.</li>
-          <li>Spearheaded paid media strategy across all channels, growing spend efficiency and scaling ROAS from 1400% → 6500%.</li>
-          <li>Collaborated with C-suite to define growth KPIs and strategy, driving a 3× improvement in overall marketing efficiency.</li>
-          <li>Executed website A/B testing programs that improved traffic-to-lead conversion by 20%.</li>
-          <li>Built Tableau and Looker Studio dashboards that cut data analysis time by 70%.</li>
-          <li>Improved site tagging coverage from 70% to 95%, unlocking richer campaign optimization signals.</li>
-          <li>Automated paid media reporting — saving 100+ hours per month for strategic work.</li>
-        </ul>
-        <div class="exp-kpi-row">
-          <div class="exp-kpi"><span class="exp-kpi-num">6500%</span> ROAS</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">170%</span> YoY Revenue</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">100hrs</span> Saved/Month</div>
-        </div>
-      </div>
-    </div>
-    <div class="exp-row reveal">
-      <div class="exp-left">
-        <div class="exp-period">Apr 2023–Apr 2024<br>Bengaluru</div>
-        <div class="exp-co">USDC Global (Edtech)</div>
-        <div class="exp-badge">★ Best Performer Q1 &amp; Q2</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-title">Performance Marketing Manager</div>
-        <ul class="exp-bullets">
-          <li>Delivered 350% YoY revenue growth while simultaneously reducing Cost Per Sale by 30%.</li>
-          <li>Managed ₹50L/month advertising budget with 200% ROAS — consistently met aggressive revenue targets.</li>
-          <li>Automated daily performance reports and built a budget consolidation dashboard, cutting reporting effort by 89%.</li>
-          <li>Designed multi-channel marketing automation workflows across email, SMS, and WhatsApp for lead nurturing at scale.</li>
-        </ul>
-        <div class="exp-kpi-row">
-          <div class="exp-kpi"><span class="exp-kpi-num">350%</span> Revenue Growth</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">₹50L</span> Budget Managed</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">-30%</span> Cost Per Sale</div>
-        </div>
-      </div>
-    </div>
-    <div class="exp-row reveal">
-      <div class="exp-left">
-        <div class="exp-period">Aug 2020–Jan 2023<br>Mumbai</div>
-        <div class="exp-co">ICICI Prudential Life Insurance</div>
-        <div class="exp-badge">★ Top 5% · 3× Impact Award</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-title">Digital Product Marketing Manager</div>
-        <ul class="exp-bullets">
-          <li>Launched go-to-market strategies for two guaranteed return plans, driving large-scale online adoption.</li>
-          <li>Grew online channels 500% YoY and achieved 175% ROI — while cutting costs by 40%.</li>
-          <li>Boosted traffic-to-lead ratio by 87.5% through customer journey mapping and UI/UX optimization.</li>
-          <li>Conducted keyword research and built SEO-optimized pages to capture high-intent organic traffic.</li>
-        </ul>
-        <div class="exp-kpi-row">
-          <div class="exp-kpi"><span class="exp-kpi-num">500%</span> Channel Growth</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">87.5%</span> Lead Ratio Lift</div>
-          <div class="exp-kpi"><span class="exp-kpi-num">175%</span> ROI</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="section" id="skills">
-  <div class="sec-label reveal">Capabilities</div>
-  <h2 class="sec-title reveal">Skills &amp; <span>Expertise</span></h2>
-  <div class="skills-layout reveal">
-    <div>
-      <div class="skill-group">
-        <div class="skill-group-name">Growth &amp; Marketing</div>
-        <div class="skill-bars">
-          <div class="skill-bar-row"><span class="skill-bar-name">Performance Marketing</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%"></div></div><span class="skill-bar-pct">95%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Growth Strategy</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Marketing Automation</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div><span class="skill-bar-pct">88%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">A/B Testing &amp; CRO</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%"></div></div><span class="skill-bar-pct">85%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Lead Generation</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div><span class="skill-bar-pct">92%</span></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="skill-group">
-        <div class="skill-group-name">Data &amp; Analytics</div>
-        <div class="skill-bars">
-          <div class="skill-bar-row"><span class="skill-bar-name">Data Visualization</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%"></div></div><span class="skill-bar-pct">92%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Google Analytics / GTM</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:90%"></div></div><span class="skill-bar-pct">90%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Tableau / Looker Studio</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:88%"></div></div><span class="skill-bar-pct">88%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Paid Media (Google/Meta)</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:94%"></div></div><span class="skill-bar-pct">94%</span></div>
-          <div class="skill-bar-row"><span class="skill-bar-name">Salesforce CRM</span><div class="skill-bar-track"><div class="skill-bar-fill" style="--w:80%"></div></div><span class="skill-bar-pct">80%</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="tools-cloud reveal">
-    <span class="tool-chip">Google Ads</span>
-    <span class="tool-chip">Meta Ads</span>
-    <span class="tool-chip">Bing Ads</span>
-    <span class="tool-chip">LinkedIn Ads</span>
-    <span class="tool-chip">Quora Ads</span>
-    <span class="tool-chip">Google Analytics</span>
-    <span class="tool-chip">Google Tag Manager</span>
-    <span class="tool-chip">Tableau</span>
-    <span class="tool-chip">Looker Studio</span>
-    <span class="tool-chip">Salesforce</span>
-    <span class="tool-chip">WhatsApp Automation</span>
-    <span class="tool-chip">Email Marketing</span>
-    <span class="tool-chip">SMS Workflows</span>
-    <span class="tool-chip">SEM / SEO</span>
-    <span class="tool-chip">Product Management</span>
-    <span class="tool-chip">AdAi</span>
-    <span class="tool-chip">iQuanti</span>
-    <span class="tool-chip">SimilarWeb</span>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section" id="testimonials">
-  <div class="sec-label reveal">What People Say</div>
-  <h2 class="sec-title reveal">Testimonials &amp; <span>Recommendations</span></h2>
-  <div class="testimonials-grid reveal">
-
-    <!-- Guruvignesh S -->
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is not just a colleague — he's the kind of teammate you dream of having by your side. He has a knack for seeing the bigger picture, for turning raw data into actionable insights. His observations are sharp and insightful, and his ability to interpret information and extract key takeaways is nothing short of impressive. I can confidently say he was a key player in our team's success. He's a true gem."</div>
-      <div class="testimonial-author">
-        <a href="https://www.linkedin.com/in/gurus17/" target="_blank" rel="noopener" class="testimonial-avatar-link">
-          <div class="testimonial-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQH5i5t6C6SMLQ/profile-displayphoto-shrink_800_800/B4DZTvNbThHwAk-/0/1739180063981?e=1777507200&v=beta&t=McxwP8AC21vLbqKeKur2x7D8_YolPPYhlU2UBY8bZuw" alt="Guruvignesh S">
-          </div>
-        </a>
-        <div>
-          <a href="https://www.linkedin.com/in/gurus17/" target="_blank" rel="noopener" class="testimonial-name-link">
-            <div class="testimonial-name">Guruvignesh S</div>
-          </a>
-          <div class="testimonial-role">Senior Manager · ICICI Prudential | Performance Marketing</div>
-          <div class="testimonial-context">Worked with Akshay on different teams · Dec 2023</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mandar Dongre -->
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a true professional with a keen eye for the data. He has a very calm and supportive personality which adds value to the team and shows collaborative results. He is absolutely a gem of a person who always helps his peers and creates a very positive environment. I truly recommend him for a role which is data-based digital analytics."</div>
-      <div class="testimonial-author">
-        <a href="https://www.linkedin.com/in/mandar-dongre-b2a14059/" target="_blank" rel="noopener" class="testimonial-avatar-link">
-          <div class="testimonial-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFkD0fUZAIURQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1716044552941?e=1777507200&v=beta&t=GNY2ZuyN8qMJVVpUrvOrK7Zh126OXChu3cWj6FUIqek" alt="Mandar Dongre">
-          </div>
-        </a>
-        <div>
-          <a href="https://www.linkedin.com/in/mandar-dongre-b2a14059/" target="_blank" rel="noopener" class="testimonial-name-link">
-            <div class="testimonial-name">Mandar Dongre</div>
-          </a>
-          <div class="testimonial-role">Senior Manager Ecommerce · Digital Insurance Products</div>
-          <div class="testimonial-context">Worked with Akshay on the same team · Aug 2023</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ani. S -->
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a person with whom while working, I learnt a lot of skills and life skills. He taught me how to be extremely organised, how to be significantly calmer and composed in situations of turmoil, and how to prioritize relevant things above others. This man's full of talent and focus, along with a really humble nature and an extremely supportive colleague to work with."</div>
-      <div class="testimonial-author">
-        <a href="https://www.linkedin.com/in/ani-s-939a15252/" target="_blank" rel="noopener" class="testimonial-avatar-link">
-          <div class="testimonial-avatar">
-            <img src="https://instagram.fblr25-1.fna.fbcdn.net/v/t51.82787-19/586653941_17923255872185451_8197182228144555678_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fblr25-1.fna.fbcdn.net&_nc_cat=103&_nc_oc=Q6cZ2gEG4CbuZiyAIxtas5U3BHv-StfjLZxudIkhpWX9zIciaMHQHPC1AEYGyrTVWc3ut10&_nc_ohc=bMLUK00llLsQ7kNvwEkMKjk&_nc_gid=djGAfgxbHfFGAKSH-FnE6Q&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af3g9xFAVCBnincrEbvZNqrGf0tJqqauTKU8AHGOja9VGg&oe=69DD42FC&_nc_sid=7a9f4b" alt="Ani. S" onerror="this.style.display='none';this.parentElement.innerHTML='A';">
-          </div>
-        </a>
-        <div>
-          <a href="https://www.linkedin.com/in/ani-s-939a15252/" target="_blank" rel="noopener" class="testimonial-name-link">
-            <div class="testimonial-name">Ani. S</div>
-          </a>
-          <div class="testimonial-role">Colleague · ICICI Prudential Life Insurance</div>
-          <div class="testimonial-context">Worked with Akshay on the same team · Aug 2023</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Aquile Aind -->
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a great colleague and an even better professional. His organized approach towards finding a solution is second to none. He not only understands his roles and responsibilities deeply but also of his team members, enabling him to tackle a problem with a 360° view. His hunger and eagerness to learn is what makes him a great professional. He will be a great asset to any organization."</div>
-      <div class="testimonial-author">
-        <a href="https://www.linkedin.com/in/aquile-aind-product-marketing/" target="_blank" rel="noopener" class="testimonial-avatar-link">
-          <div class="testimonial-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHJq4jsTyUTLg/profile-displayphoto-shrink_400_400/B4DZdUr9YNGkAk-/0/1749472500597?e=1777507200&v=beta&t=wiCRVTgav8xvwl1uXBAZmnlhwYI_HGYEU_RwaoHB8s0" alt="Aquile Aind">
-          </div>
-        </a>
-        <div>
-          <a href="https://www.linkedin.com/in/aquile-aind-product-marketing/" target="_blank" rel="noopener" class="testimonial-name-link">
-            <div class="testimonial-name">Aquile Aind</div>
-          </a>
-          <div class="testimonial-role">Product &amp; Growth · Kotak Cherry | IIM Ahmedabad</div>
-          <div class="testimonial-context">Worked with Akshay on the same team · Jan 2023</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <p style="text-align:center; margin-top: 32px; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em;">
-    // Verified on <a href="https://www.linkedin.com/in/akshaygrowthmanager/" target="_blank" style="color: var(--orange); text-decoration: none;">LinkedIn ↗</a>
-  </p>
-</section>
-
-<!-- EDUCATION -->
 <section class="section">
-  <div class="sec-label reveal">Academic Background</div>
-  <h2 class="sec-title reveal">Education</h2>
-  <div class="edu-row reveal">
-    <div class="edu-card">
-      <div class="edu-degree">MBA in Marketing</div>
-      <div class="edu-school">NMIMS Mumbai</div>
-      <div class="edu-meta">2018 – 2020 &nbsp;·&nbsp; GPA 3.29 / 4.0<br>Case Competition Finalist × 3</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree">B.Tech — Information Technology</div>
-      <div class="edu-school">Madras Institute of Technology, Chennai</div>
-      <div class="edu-meta">2013 – 2017 &nbsp;·&nbsp; GPA 8.39 / 10<br>Strong analytical &amp; technical foundation</div>
-    </div>
-  </div>
+<h2>Testimonials</h2>
+
+<div class="testimonial">
+<p>"Exceptional growth strategist"</p>
+<strong>Anirudh Singh Rathore</strong>
+<br>
+<img src="https://instagram.fblr25-1.fna.fbcdn.net/v/t51.82787-19/586653941_17923255872185451_8197182228144555678_n.jpg" width="60">
+<br><br>
+<a href="https://www.linkedin.com/in/akshaygrowthmanager/details/recommendations/?detailScreenTabIndex=0" target="_blank">Explore full recommendations on LinkedIn →</a>
+</div>
+
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section class="section">
-  <div class="sec-label reveal">Recognition</div>
-  <h2 class="sec-title reveal">Awards &amp; <span>Achievements</span></h2>
-  <div class="ach-list reveal">
-    <div class="ach-item"><div class="ach-icon">🚀</div><div class="ach-body"><div class="ach-title">Promoted to Senior Analyst—Growth Analytics within 18 months at MPOWER Financing</div><div class="ach-year">Nov 2025</div></div></div>
-    <div class="ach-item"><div class="ach-icon">🏆</div><div class="ach-body"><div class="ach-title">Best Performer Award — Q1 &amp; Q2 at USDC Global</div><div class="ach-year">2023</div></div></div>
-    <div class="ach-item"><div class="ach-icon">⭐</div><div class="ach-body"><div class="ach-title">Top 5% Achiever across ICICI Prudential Life Insurance</div><div class="ach-year">2021 – 2022</div></div></div>
-    <div class="ach-item"><div class="ach-icon">🎖️</div><div class="ach-body"><div class="ach-title">3× Impact Award Winner at ICICI Prudential Life Insurance</div><div class="ach-year">2022 – 2023</div></div></div>
-    <div class="ach-item"><div class="ach-icon">🥇</div><div class="ach-body"><div class="ach-title">Campus Winner — Optum Stratethon Case Study Competition</div><div class="ach-year">2019</div></div></div>
-    <div class="ach-item"><div class="ach-icon">🏅</div><div class="ach-body"><div class="ach-title">National Finalist — Blackbuck Xccelerate Product Management Case Competition</div><div class="ach-year">2019</div></div></div>
-    <div class="ach-item"><div class="ach-icon">🎯</div><div class="ach-body"><div class="ach-title">Campus Finalist — Philips ThinkUp Challenge Case Study Competition</div><div class="ach-year">2019</div></div></div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="cta-bg"></div>
-  <div class="cta-tag">// Ready to Drive Your Growth</div>
-  <h2 class="cta-heading">LET'S BUILD<br><span>SOMETHING</span><br>BIG.</h2>
-  <p class="cta-sub">Looking for a Growth Manager who owns outcomes, not just activity metrics? Let's talk.</p>
-  <div class="cta-links">
-    <a href="mailto:makshay96@gmail.com" class="btn-primary">Email Me →</a>
-    <a href="https://www.linkedin.com/in/akshaygrowthmanager/" target="_blank" class="btn-ghost">View LinkedIn ↗</a>
-  </div>
-  <div class="cta-contact-info">
-    <div class="cta-info-item"><span class="cta-info-label">Email</span><span class="cta-info-val">makshay96@gmail.com</span></div>
-    <div class="cta-info-item"><span class="cta-info-label">Phone</span><span class="cta-info-val"><a href="tel:+919600112949">+91-9600112949</a></span></div>
-    <div class="cta-info-item"><span class="cta-info-label">Location</span><span class="cta-info-val">Bengaluru, India</span></div>
-    <div class="cta-info-item"><span class="cta-info-label">Open To</span><span class="cta-info-val">Hybrid, Remote</span></div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-logo">AKSHAY<span>.</span>MADHAVAN</div>
-  <div class="footer-copy">Growth Manager · Bengaluru · 2026</div>
-</footer>
+<div class="footer">
+© 2026 Akshay Madhavan
+</div>
 
 <script>
-// ── Nav: shrink on scroll ──────────────────────────────
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// ── Hamburger toggle ───────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const drawer = document.getElementById('nav-drawer');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  drawer.classList.toggle('open');
-  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
-});
-document.querySelectorAll('.drawer-link, .drawer-cta').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    drawer.classList.remove('open');
-    document.body.style.overflow = '';
-  });
-});
-
-// ── Scroll-spy: highlight active nav link ─────────────
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-const observerSpy = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-      if (activeLink) activeLink.classList.add('active');
-    }
-  });
-}, { threshold: 0.3, rootMargin: '-60px 0px -40% 0px' });
-sections.forEach(s => observerSpy.observe(s));
-
-// ── Scroll reveal ──────────────────────────────────────
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ── Skill bar animation ────────────────────────────────
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        setTimeout(() => bar.classList.add('animate'), 200);
-      });
-      barObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skills-layout').forEach(el => barObserver.observe(el));
-
-// ── Impact number counter ──────────────────────────────
-function animateCount(el, target, suffix) {
-  suffix = suffix || '';
-  let start = 0;
-  const dur = 1800;
-  const step = timestamp => {
-    if (!start) start = timestamp;
-    const prog = Math.min((timestamp - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - prog, 3);
-    el.textContent = Math.floor(ease * target) + suffix;
-    if (prog < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-const numObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const num = entry.target.querySelector('.impact-num');
-      if (num) {
-        const raw = num.textContent.trim();
-        const digits = parseInt(raw.replace(/[^0-9]/g, ''), 10);
-        const suffix = raw.replace(/[0-9]/g, '');
-        if (!isNaN(digits)) animateCount(num, digits, suffix);
-      }
-      numObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.4 });
-document.querySelectorAll('.impact-card').forEach(el => numObserver.observe(el));
-
-// ── Case study accordion toggle ────────────────────────
-function toggleCS(header) {
-  const card = header.closest('.case-study-card');
-  const body = header.nextElementSibling;
-  const icon = header.querySelector('.cs-expand');
-  // Close all others
-  document.querySelectorAll('.cs-body.open').forEach(b => {
-    if (b !== body) {
-      b.classList.remove('open');
-      b.previousElementSibling.querySelector('.cs-expand').classList.remove('open');
-    }
-  });
-  body.classList.toggle('open');
-  icon.classList.toggle('open');
-  if (body.classList.contains('open')) {
-    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
-  }
+function toggleCase(el){
+ const body = el.nextElementSibling;
+ body.classList.toggle('open');
 }
 </script>
+
 </body>
 </html>

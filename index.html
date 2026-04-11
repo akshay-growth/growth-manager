@@ -75,11 +75,13 @@ nav.scrolled { padding: 10px var(--page-pad); box-shadow: 0 4px 24px rgba(26,18,
 .nav-cta:hover { background: #D94E1E !important; transform: translateY(-1px); box-shadow: 0 6px 20px var(--orange-glow) !important; }
 .nav-cta::after { display: none !important; }
 /* Hamburger */
+<!--
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 600; }
 .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
 .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+-->
 /* Mobile drawer */
 .nav-drawer { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,248,240,0.98); backdrop-filter: blur(20px); z-index: 490; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
 .nav-drawer.open { display: flex; }
@@ -426,6 +428,7 @@ nav.scrolled { padding: 10px var(--page-pad); box-shadow: 0 4px 24px rgba(26,18,
 .cta-info-val a { color: inherit; text-decoration: none; }
 .cta-info-val a:hover { color: var(--orange); }
 
+
 /* ─── FOOTER ──────────────── */
 footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.01em; color: rgba(255,255,255,0.5); }
@@ -459,7 +462,7 @@ footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; a
   :root { --page-pad: 20px; --section-v: 60px; }
   nav { padding: 12px var(--page-pad); }
   .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
+ /* .nav-hamburger { display: flex; }*/
   .hero { padding: 100px var(--page-pad) 48px; min-height: auto; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
@@ -577,6 +580,128 @@ footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; a
 .mob-nav-cta:hover { background: #D94E1E !important; color: #fff !important; }
 
 /* sticky mobile CTA removed */
+
+/* ─── TESTIMONIAL TRUNCATION ── */
+.testimonial-quote-inner {
+  position: relative;
+}
+.testimonial-quote-inner.truncated {
+  max-height: 9.5em; /* ~5 lines */
+  overflow: hidden;
+}
+.testimonial-quote-inner.truncated::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3em;
+  background: linear-gradient(transparent, var(--surface));
+  pointer-events: none;
+}
+.testimonial-card:hover .testimonial-quote-inner.truncated::after {
+  background: linear-gradient(transparent, #fff8f0);
+}
+.testimonial-view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.testimonial-view-more:hover { opacity: 0.75; }
+.testimonial-view-more .vm-icon { font-style: normal; font-size: 0.7rem; transition: transform 0.25s; }
+.testimonial-view-more.expanded .vm-icon { transform: rotate(180deg); }
+
+/* ─── MOBILE SECTION NAV ───── */
+.mobile-section-nav {
+  display: none;
+  position: fixed;
+  top: 57px; /* below the main nav */
+  left: 0; right: 0;
+  z-index: 490;
+  background: rgba(255,248,240,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  box-shadow: 0 2px 12px rgba(26,18,8,0.06);
+}
+.mobile-section-nav::-webkit-scrollbar { display: none; }
+.mobile-section-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 4px;
+  width: max-content;
+  min-width: 100%;
+}
+.mob-sec-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.mob-sec-link:hover { color: var(--orange); }
+.mob-sec-link.active { color: var(--orange); border-bottom-color: var(--orange); }
+@media (max-width: 768px) {
+  .mobile-section-nav { display: block; }
+  /* Push hero down for both navbars */
+  .hero { padding-top: 136px; }
+  nav.scrolled ~ .mobile-section-nav { top: 53px; }
+}
+
+/* ─── STICKY MOBILE CTA ─────── */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 72px; /* above bottom nav */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 580;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 100px;
+  box-shadow: 0 8px 32px var(--orange-glow);
+  white-space: nowrap;
+  transition: opacity 0.35s, transform 0.35s, background 0.2s;
+  pointer-events: auto;
+}
+.mobile-sticky-cta:hover { background: #D94E1E; }
+.mobile-sticky-cta.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(10px);
+}
+@media (max-width: 768px) {
+  .mobile-sticky-cta { display: flex; align-items: center; gap: 8px; }
+}
 </style>
 </head>
 <body>
@@ -601,7 +726,7 @@ footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; a
   </button>
 </nav>
 
-<!-- MOBILE DRAWER -->
+<!-- MOBILE DRAWERx
 <div class="nav-drawer" id="nav-drawer">
   <a href="#about" class="drawer-link">About</a>
   <a href="#impact" class="drawer-link">Impact</a>
@@ -611,7 +736,7 @@ footer { background: var(--ink); padding: 32px var(--page-pad); display: flex; a
   <a href="#testimonials" class="drawer-link">Testimonials</a>
   <a href="#contact" class="drawer-cta">Hire Me →</a>
 </div>
-
+-->
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -1120,7 +1245,7 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
         <ul class="exp-bullets">
           <li>Owned end-to-end analytics for the digital marketing team, delivering weekly insights that drove 170% YoY revenue growth.</li>
           <li>Spearheaded paid media strategy across all channels, growing spend efficiency and scaling ROAS from 1400% → 6500%.</li>
-          <li>Collaborated with the team to define growth KPIs and strategy, driving a 3× improvement in overall marketing efficiency.</li>
+          <li>Collaborated with C-suite to define growth KPIs and strategy, driving a 3× improvement in overall marketing efficiency.</li>
           <li>Executed website A/B testing programs that improved traffic-to-lead conversion by 20%.</li>
           <li>Built Tableau and Looker Studio dashboards that cut data analysis time by 70%.</li>
           <li>Improved site tagging coverage from 70% to 95%, unlocking richer campaign optimization signals.</li>
@@ -1248,7 +1373,19 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
     <!-- Guruvignesh S -->
     <div class="testimonial-card">
       <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is not just a colleague, he's the kind of teammate you dream of having by your side. He has a knack for seeing the bigger picture, for turning raw data into actionable insights. His observations are sharp and insightful, and his ability to interpret information and extract key takeaways is nothing short of impressive. I can confidently say he was a key player in our team's success. He's a true gem."</div>
+      <div class="testimonial-quote">
+        <div class="testimonial-quote-inner truncated" id="tq-guru">"Akshay is not just a colleague, he's the kind of teammate you dream of having by your side. From the moment I joined the team as a newbie, Akshay's guidance was invaluable. He mentored not just me, but the entire batch of new joiners, making sure we felt supported and equipped to navigate the sometimes-murky waters of our new roles.
+<p>
+What truly sets Akshay apart is his unwavering sense of ownership.<span class="tq-fold"> He doesn't shy away from challenges, instead embracing them with a can-do attitude that's truly inspiring. I've seen him take projects from conception to completion, meticulously managing every step along the way. He goes above and beyond the call of duty, often putting in the extra mile to ensure deliverables exceed expectations.
+<p>
+But Akshay's dedication extends beyond mere hard work. He has a knack for seeing the bigger picture, for turning raw data into actionable insights. His observations are sharp and insightful, and his ability to interpret information and extract key takeaways is nothing short of impressive. This, coupled with his clear and structured thinking approach, makes him an invaluable asset in the ideation of new business propositions.
+<p>
+I can confidently say that Akshay was a key player in our team's success. His dedication, ownership, and sharp mind made him a pillar of support and a driving force behind countless successful business initiatives. If you're looking for a reliable, results-oriented teammate who can think critically, take initiative, and inspire those around them, look no further than Akshay. He's a true gem, and I wholeheartedly recommend him for any opportunity that comes his way."</span>
+        </div>
+        <button class="testimonial-view-more" onclick="toggleTestimonial('tq-guru', this)" aria-expanded="false">
+          <span class="vm-text">View more</span> <em class="vm-icon">▾</em>
+        </button>
+      </div>
       <div class="testimonial-author">
         <a href="https://www.linkedin.com/in/gurus17/" target="_blank" rel="noopener" class="testimonial-avatar-link">
           <div class="testimonial-avatar">
@@ -1268,7 +1405,7 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
     <!-- Mandar Dongre -->
     <div class="testimonial-card">
       <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a true professional with a keen eye for the data. He has a very calm and supportive personality which adds value to the team and shows collaborative results. He is absolutely a gem of a person who always helps his peers and creates a very positive environment. I truly recommend him for a role which is data-based digital analytics."</div>
+      <div class="testimonial-quote">"Akshay is a true professional with a keen eye for the data. He is very good at Excel and PowerPoint. He is absolutely a gem of a person who always helps his peers and creates a very positive environment. Akshay has a very calm and supportive personality which adds value to the team and shows collaborative results. I truly recommend him for a role which is data-based digital analytics and wish him the best."</div>
       <div class="testimonial-author">
         <a href="https://www.linkedin.com/in/mandar-dongre-b2a14059/" target="_blank" rel="noopener" class="testimonial-avatar-link">
           <div class="testimonial-avatar">
@@ -1288,7 +1425,13 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
     <!-- Ani. S -->
     <div class="testimonial-card">
       <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a person with whom while working, I learnt a lot of skills and life skills. He taught me how to be extremely organised, how to be significantly calmer and composed in situations of turmoil, and how to prioritize relevant things above others. This man's full of talent and focus, along with a really humble nature and an extremely supportive colleague to work with."</div>
+      <div class="testimonial-quote">
+        <div class="testimonial-quote-inner truncated" id="tq-ani">"Akshay is a person with whom, while working, I learnt a lot of skills and life skills. Professionally, he taught me how to be extremely organised with everything flowing in and out of my work. He taught me how to be significantly calmer and composed in situations when I was facing a turmoil, be it work or personal problems. He also taught me how to balance everything, from having fun at work to working resiliently<span class="tq-fold"> with a gradual increase in focus. I also learnt how to prioritize relevant things above others. This man's full of talent and focus, along with a really humble nature and an extremely supportive colleague to work with. My recommendations would actually be for all the top brands out there. Get hold of this guy before it's too late. Best asset for any brand out there. Anybody would love working with him."</span>
+        </div>
+        <button class="testimonial-view-more" onclick="toggleTestimonial('tq-ani', this)" aria-expanded="false">
+          <span class="vm-text">View more</span> <em class="vm-icon">▾</em>
+        </button>
+      </div>
       <div class="testimonial-author">
         <a href="https://www.linkedin.com/in/ani-s-939a15252/" target="_blank" rel="noopener" class="testimonial-avatar-link">
           <div class="testimonial-avatar">
@@ -1307,7 +1450,13 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
     <!-- Aquile Aind -->
     <div class="testimonial-card">
       <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <div class="testimonial-quote">"Akshay is a great colleague and an even better professional. His organized approach towards finding a solution is second to none. He not only understands his roles and responsibilities deeply but also of his team members, enabling him to tackle a problem with a 360° view. His hunger and eagerness to learn is what makes him a great professional. He will be a great asset to any organization."</div>
+      <div class="testimonial-quote">
+        <div class="testimonial-quote-inner truncated" id="tq-aquile">"Akshay is a great colleague and an even better professional. His organized approach towards finding a solution is second to none. He not only understands his roles and responsibilities deeply but also of his team members understanding the interdependencies, which enables him to tackle a problem with a 360-degree view, his hunger and eagerness to learn are what make him a great professional. He has been an ace performer<span class="tq-fold"> of our team and his willingness to help his team members is really admirable. He will be a great asset to any organization and I wish him luck for his future endeavours."</span>
+        </div>
+        <button class="testimonial-view-more" onclick="toggleTestimonial('tq-aquile', this)" aria-expanded="false">
+          <span class="vm-text">View more</span> <em class="vm-icon">▾</em>
+        </button>
+      </div>
       <div class="testimonial-author">
         <a href="https://www.linkedin.com/in/aquile-aind-product-marketing/" target="_blank" rel="noopener" class="testimonial-avatar-link">
           <div class="testimonial-avatar">
@@ -1394,7 +1543,7 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
     <a href="https://www.linkedin.com/in/akshaygrowthmanager/" target="_blank" class="btn-ghost">View LinkedIn ↗</a>
   </div>
   <div class="cta-contact-info">
-    <div class="cta-info-item"><span class="cta-info-label">Email</span><span class="cta-info-val"><a href="mailto:makshay96@gmail.com" class="__cf_email__" data-cfemail="690408021a010810505f290e04080005470a0604">makshay96@gmail.com</a></span></div>
+    <div class="cta-info-item"><span class="cta-info-label">Email</span><span class="cta-info-val"><a href="mailto:makshay96@gmail.com" class="__cf_email__" data-cfemail="690408021a010810505f290e04080005470a0604"><span class="__cf_email__" data-cfemail="4e232f253d262f3777780e29232f2722602d2123">makshay96@gmail.com</span></a></span></div>
     <div class="cta-info-item"><span class="cta-info-label">Phone</span><span class="cta-info-val"><a href="tel:+919600112949">+91-9600112949</a></span></div>
     <div class="cta-info-item"><span class="cta-info-label">Location</span><span class="cta-info-val">Bengaluru, India</span></div>
       </div>
@@ -1404,6 +1553,19 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
   <div class="footer-logo">AKSHAY<span>.</span>MADHAVAN</div>
   <div class="footer-copy">Growth Manager · Bengaluru · 2026</div>
 </footer>
+
+
+<!-- MOBILE SECTION NAV -->
+<nav class="mobile-section-nav" id="mobile-section-nav" aria-label="Page sections">
+  <div class="mobile-section-nav-inner">
+    <a href="#about" class="mob-sec-link" data-msec="about">About</a>
+    <a href="#impact" class="mob-sec-link" data-msec="impact">Impact</a>
+    <a href="#case-studies" class="mob-sec-link" data-msec="case-studies">Case Studies</a>
+    <a href="#experience" class="mob-sec-link" data-msec="experience">Experience</a>
+    <a href="#skills" class="mob-sec-link" data-msec="skills">Skills</a>
+    <a href="#testimonials" class="mob-sec-link" data-msec="testimonials">Testimonials</a>
+  </div>
+</nav>
 
 <!-- MOBILE BOTTOM NAV -->
 <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
@@ -1428,9 +1590,12 @@ I work at the intersection of strategy, analytics, and execution, enabling organ
   </a>
 </nav>
 
-<!-- STICKY MOBILE CTA REMOVED -->
+<!-- STICKY MOBILE CTA -->
+<a href="#contact" class="mobile-sticky-cta hidden" id="mobile-sticky-cta" aria-label="Let's Talk Growth">
+  LET'S TALK GROWTH →
+</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Nav: shrink on scroll ──────────────────────────────
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
@@ -1438,6 +1603,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ── Hamburger toggle ───────────────────────────────────
+<!--
 const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('nav-drawer');
 hamburger.addEventListener('click', () => {
@@ -1452,7 +1618,7 @@ document.querySelectorAll('.drawer-link, .drawer-cta').forEach(link => {
     document.body.style.overflow = '';
   });
 });
-
+ -->
 // ── Scroll-spy: highlight active nav link ─────────────
 const navSpySections = Array.from(document.querySelectorAll('section[id], div[id]')).filter(el => {
   return document.querySelector(`.nav-links a[href="#${el.id}"]`);
@@ -1556,12 +1722,87 @@ const mobObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       mobNavItems.forEach(a => a.classList.remove('active'));
-      const active = document.querySelector(`.mob-nav-item[data-section="${entry.target.id}"]`);
+      const active = document.querySelector('.mob-nav-item[data-section="' + entry.target.id + '"]');
       if (active) active.classList.add('active');
     }
   });
-}, { threshold: 0.3, rootMargin: '-60px 0px -40% 0px' });
-document.querySelectorAll('section[id]').forEach(s => mobObserver.observe(s));
+}, { threshold: 0.3 });
+document.querySelectorAll('section[id], div[id]').forEach(el => {
+  if (document.querySelector('.mob-nav-item[data-section="' + el.id + '"]')) {
+    mobObserver.observe(el);
+  }
+});
+
+// ── Toggle testimonial view more/less ──────────────────
+function toggleTestimonial(id, btn) {
+  const inner = document.getElementById(id);
+  const textEl = btn.querySelector('.vm-text');
+  const expanded = inner.classList.toggle('truncated');
+  // truncated removed = expanded; truncated present = collapsed
+  const isExpanded = !inner.classList.contains('truncated');
+  btn.setAttribute('aria-expanded', isExpanded);
+  btn.classList.toggle('expanded', isExpanded);
+  textEl.textContent = isExpanded ? 'View less' : 'View more';
+}
+
+// ── Mobile section nav scroll-spy ─────────────────────
+const mobSecLinks = document.querySelectorAll('.mob-sec-link[data-msec]');
+const mobSecSections = [];
+mobSecLinks.forEach(link => {
+  const id = link.getAttribute('data-msec');
+  const el = document.getElementById(id);
+  if (el) mobSecSections.push({ el, id });
+});
+
+function updateMobSecNav() {
+  if (!mobSecSections.length) return;
+  const scrollY = window.scrollY;
+  const offset = 110;
+  let current = mobSecSections[0].id;
+  mobSecSections.forEach(({ el, id }) => {
+    if (el.getBoundingClientRect().top + scrollY - offset <= scrollY) {
+      current = id;
+    }
+  });
+  mobSecLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-msec') === current);
+  });
+  // Auto-scroll active link into view in the nav strip
+  const activeLink = document.querySelector('.mob-sec-link.active');
+  if (activeLink) {
+    const nav = document.getElementById('mobile-section-nav');
+    if (nav) {
+      const navRect = nav.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+      if (linkRect.left < navRect.left + 20 || linkRect.right > navRect.right - 20) {
+        activeLink.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  }
+}
+window.addEventListener('scroll', updateMobSecNav, { passive: true });
+updateMobSecNav();
+
+// ── Sticky mobile CTA: hide when orange CTAs are visible ──
+const stickyCta = document.getElementById('mobile-sticky-cta');
+function updateStickyCta() {
+  if (!stickyCta) return;
+  // Check if any .btn-primary is in viewport
+  const ctaButtons = document.querySelectorAll('.btn-primary, .nav-cta, .mob-nav-cta, .drawer-cta');
+  let anyVisible = false;
+  ctaButtons.forEach(btn => {
+    if (btn === stickyCta) return;
+    const rect = btn.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0 && rect.width > 0) {
+      anyVisible = true;
+    }
+  });
+  stickyCta.classList.toggle('hidden', anyVisible);
+}
+window.addEventListener('scroll', updateStickyCta, { passive: true });
+window.addEventListener('resize', updateStickyCta);
+updateStickyCta();
+
 </script>
 </body>
 </html>
